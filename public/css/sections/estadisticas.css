@@ -1,0 +1,24 @@
+/* ===== ESTADÍSTICAS ===== */
+.estadisticas {
+    background: var(--primary);
+    color: var(--white);
+    padding: 4rem 0;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.estadistica-numero {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+}
+
+.estadistica-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}

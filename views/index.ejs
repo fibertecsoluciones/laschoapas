@@ -1,0 +1,187 @@
+<%- include('layout/header') %>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="animate__animated animate__fadeInUp">H. Ayuntamiento de Las Choapas</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Tierra de energía y progreso</p>
+        <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="/tramites" class="btn btn-primary">Trámites en Línea</a>
+            <a href="/contacto" class="btn btn-outline">Contacto Ciudadano</a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICIOS RÁPIDOS -->
+<section class="servicios">
+    <div class="container">
+        <h2 class="section-title">Servicios en Línea</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fas fa-file-invoice servicio-icon"></i>
+                <h3>Pago de Predial</h3>
+                <p>Consulta y paga tu impuesto predial en línea</p>
+                <a href="/tramites/predial" class="servicio-link">Realizar pago →</a>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-id-card servicio-icon"></i>
+                <h3>Licencias Municipales</h3>
+                <p>Trámites para negocios y establecimientos</p>
+                <a href="/tramites/licencias" class="servicio-link">Solicitar →</a>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-exclamation-triangle servicio-icon"></i>
+                <h3>Reporte Ciudadano</h3>
+                <p>Reporta baches, alumbrado, basura y más</p>
+                <a href="/reportes" class="servicio-link">Reportar →</a>
+            </div>
+            <div class="servicio-card">
+                <i class="fas fa-calendar-alt servicio-icon"></i>
+                <h3>Eventos Culturales</h3>
+                <p>Calendario de eventos y festividades</p>
+                <a href="/cultura" class="servicio-link">Ver eventos →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NOTICIAS DESTACADAS -->
+<section class="noticias">
+    <div class="container">
+        <h2 class="section-title">Noticias Destacadas</h2>
+        <div class="noticias-grid" id="noticias-container">
+            <!-- Se cargarán dinámicamente -->
+        </div>
+        <div class="text-center">
+            <a href="/noticias" class="btn btn-secondary">Ver todas las noticias</a>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSPARENCIA (Obligatorio en Veracruz) -->
+<section class="transparencia">
+    <div class="container">
+        <h2 class="section-title">Transparencia y Rendición de Cuentas</h2>
+        <p class="section-subtitle">De acuerdo a la Ley de Transparencia del Estado de Veracruz</p>
+        
+        <div class="transparencia-grid">
+            <div class="transparencia-card">
+                <i class="fas fa-chart-line transparencia-icon"></i>
+                <h3>Gasto Público</h3>
+                <ul>
+                    <li>Egresos 2024: $XXX,XXX,XXX</li>
+                    <li>Ingresos 2024: $XXX,XXX,XXX</li>
+                    <li>Deuda Pública: $XXX,XXX</li>
+                </ul>
+                <a href="/transparencia/gasto" class="btn btn-small">Ver detalle</a>
+            </div>
+            <div class="transparencia-card">
+                <i class="fas fa-file-contract transparencia-icon"></i>
+                <h3>Obras Públicas</h3>
+                <ul>
+                    <li>Obras en proceso: 12</li>
+                    <li>Obras concluidas: 8</li>
+                    <li>Inversión total: $XX,XXX,XXX</li>
+                </ul>
+                <a href="/transparencia/obras" class="btn btn-small">Ver obras</a>
+            </div>
+            <div class="transparencia-card">
+                <i class="fas fa-users transparencia-icon"></i>
+                <h3>Directorio de Funcionarios</h3>
+                <ul>
+                    <li>Presidente Municipal: Lic. Juan Pérez</li>
+                    <li>Síndico: Lic. María García</li>
+                    <li>Regidores: 8 funcionarios</li>
+                </ul>
+                <a href="/transparencia/directorio" class="btn btn-small">Ver todos</a>
+            </div>
+            <div class="transparencia-card">
+                <i class="fas fa-file-pdf transparencia-icon"></i>
+                <h3>Documentos Oficiales</h3>
+                <ul>
+                    <li>Ley de Ingresos 2024</li>
+                    <li>Presupuesto de Egresos</li>
+                    <li>Acta de Cabildo</li>
+                </ul>
+                <a href="/transparencia/documentos" class="btn btn-small">Ver documentos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ESTADÍSTICAS DEL MUNICIPIO -->
+<section class="estadisticas">
+    <div class="container">
+        <div class="estadisticas-grid">
+            <div class="estadistica-item">
+                <span class="estadistica-numero">80,000+</span>
+                <span class="estadistica-label">Habitantes</span>
+            </div>
+            <div class="estadistica-item">
+                <span class="estadistica-numero">3,500 km²</span>
+                <span class="estadistica-label">Superficie</span>
+            </div>
+            <div class="estadistica-item">
+                <span class="estadistica-numero">150+</span>
+                <span class="estadistica-label">Comunidades</span>
+            </div>
+            <div class="estadistica-item">
+                <span class="estadistica-numero">24/7</span>
+                <span class="estadistica-label">Servicios</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO RÁPIDO -->
+<section class="contacto-rapido">
+    <div class="container">
+        <div class="contacto-box">
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Comunícate con nosotros, estamos para servirte</p>
+            <div class="contacto-opciones">
+                <a href="tel:9231234567" class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(923) 123-4567</span>
+                </a>
+                <a href="mailto:contacto@laschoapas.gob.mx" class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contacto@laschoapas.gob.mx</span>
+                </a>
+                <a href="/contacto" class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Av. Independencia #123, Centro</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Cargar noticias destacadas
+    fetch('/api/noticias?destacadas=true&limite=3')
+        .then(res => res.json())
+        .then(noticias => {
+            const container = document.getElementById('noticias-container');
+            if (noticias && noticias.length > 0) {
+                container.innerHTML = noticias.map(noticia => `
+                    <article class="noticia-card">
+                        <img src="${noticia.imagen || '/images/default-news.jpg'}" alt="${noticia.titulo}">
+                        <div class="noticia-content">
+                            <span class="noticia-fecha">${new Date(noticia.fecha).toLocaleDateString()}</span>
+                            <h3>${noticia.titulo}</h3>
+                            <p>${noticia.resumen}</p>
+                            <a href="/noticias/${noticia.id}" class="read-more">Leer más →</a>
+                        </div>
+                    </article>
+                `).join('');
+            } else {
+                container.innerHTML = '<p>No hay noticias disponibles</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error cargando noticias:', error);
+        });
+</script>
+
+<%- include('layout/footer') %>

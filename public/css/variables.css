@@ -1,0 +1,20 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    /* Colores principales */
+    --primary: #FF6B00;
+    --primary-dark: #E65100;
+    --primary-light: #FFB74D;
+    --secondary: #2C3E50;
+    
+    /* Colores neutros */
+    --white: #FFFFFF;
+    --gray-100: #F5F5F5;
+    --gray-900: #333333;
+    
+    /* Tamaños */
+    --container-max: 1200px;
+    --header-height: 70px;
+    
+    /* Sombras */
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
