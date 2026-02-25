@@ -1,0 +1,57 @@
+<%- include('layout/header') %>
+
+<section class="noticia-individual">
+    <div class="container">
+        <article class="noticia-completa">
+            <div class="noticia-header">
+                <span class="noticia-categoria"><%= noticia.categoria %></span>
+                <h1><%= noticia.titulo %></h1>
+                <div class="noticia-meta">
+                    <span><i class="far fa-calendar-alt"></i> 
+                        <%= new Date(noticia.fecha).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                    </span>
+                </div>
+            </div>
+            
+            <img src="<%= noticia.imagen || '/imagenes/default-news.jpg' %>" alt="<%= noticia.titulo %>" class="noticia-imagen-principal">
+            
+            <div class="noticia-contenido">
+                <%- noticia.contenido %>
+            </div>
+            
+            <div class="noticia-compartir">
+                <h4>Compartir esta noticia:</h4>
+                <div class="social-share">
+                    <a href="#" class="share-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
+        
+        <% if (relacionadas && relacionadas.length > 0) { %>
+            <section class="noticias-relacionadas">
+                <h3>Noticias relacionadas</h3>
+                <div class="noticias-grid">
+                    <% relacionadas.forEach(rel => { %>
+                        <article class="noticia-card">
+                            <img src="<%= rel.imagen || '/imagenes/default-news.jpg' %>" alt="<%= rel.titulo %>">
+                            <div class="noticia-content">
+                                <h4><%= rel.titulo %></h4>
+                                <a href="/noticias/<%= rel.id %>" class="read-more">Leer más →</a>
+                            </div>
+                        </article>
+                    <% }) %>
+                </div>
+            </section>
+        <% } %>
+        
+        <div class="volver">
+            <a href="/#noticias" class="btn-noticias">
+    <i class="fas fa-arrow-left"></i> Volver a noticias
+</a>
+        </div>
+    </div>
+</section>
+
+<%- include('layout/footer') %>

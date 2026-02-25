@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- En el <head> de header.ejs, después del CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <title><%= titulo ? titulo + ' | ' : '' %>H. Ayuntamiento de Las Choapas</title>
     
     <!-- ⚠️ EL CSS SOLO VA AQUÍ, UNA SOLA VEZ -->
@@ -18,10 +20,11 @@
     <header class="header">
         <nav class="navbar container">
             <div class="logo">
-                <a href="/">
-                    <span class="logo-text">Las Choapas</span>
-                </a>
-            </div>
+    <a href="/">
+        <img src="/imagenes/LOGO.png" alt="Las Choapas" class="logo-img">
+       
+    </a>
+</div>
             <ul class="nav-menu">
                 <li class="<%= currentPage === 'inicio' ? 'active' : '' %>">
                     <a href="/">Inicio</a>

@@ -1,22 +1,100 @@
-/* ===== HERO SECTION ===== */
+/* ===== HERO CON CAPA OSCURA EN TODA LA IMAGEN ===== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('/images/hero-bg.jpg') center/cover;
-    height: 500px;
+    position: relative;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
+    color: white;
     margin-top: var(--header-height);
+    
+    /* 🖼️ IMAGEN DE FONDO */
+    background-image: url('/imagenes/palacio2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efecto parallax opcional */
+}
+
+/* 🎯 CAPA OSCURA EN TODA LA IMAGEN */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Ajusta la opacidad aquí */
+    z-index: 1;
+}
+
+/* Contenido por encima de la capa oscura */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Degradado suave en la parte inferior */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--white), transparent);
+    z-index: 2;
+}
+
+.hero .slogan {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    
+    /* 🎯 COLOR SÓLIDO #f05c00 */
+    color: #f05c00;
+    
+    /* Efectos adicionales */
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.3),
+        0 0 20px rgba(240,92,0,0.3);
+    letter-spacing: 2px;
+    margin: 1rem 0;
+    
+    /* Pequeño efecto de brillo */
+    transition: text-shadow 0.3s ease;
+}
+
+.hero .slogan:hover {
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.3),
+        0 0 30px rgba(240,92,0,0.6);
+}
+
+/* Ajustes para la capa oscura en móviles */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 500px;
+        background-attachment: scroll;
+    }
+    
+    .hero::before {
+        background: rgba(0, 0, 0, 0.7); /* Un poco más oscuro en móviles */
+    }
 }

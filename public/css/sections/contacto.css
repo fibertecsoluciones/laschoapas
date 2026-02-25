@@ -1,0 +1,74 @@
+/* ===== CONTACTO RÁPIDO ===== */
+.contacto-rapido {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.contacto-box {
+    background: var(--gradient-soft);
+    padding: 4rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.contacto-box h2 {
+    font-size: 2.2rem;
+    color: var(--gray-900);
+    margin-bottom: 1rem;
+}
+
+.contacto-box p {
+    color: var(--gray-600);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.contacto-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gray-900);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: var(--white);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.contacto-item:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contacto-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    transition: all var(--transition-normal);
+}
+
+.contacto-item:hover i {
+    color: var(--white);
+}

@@ -1,24 +1,57 @@
 /* ===== ESTADÍSTICAS ===== */
 .estadisticas {
-    background: var(--primary);
+    background: var(--gradient-primary);
     color: var(--white);
-    padding: 4rem 0;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.estadisticas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern.png') repeat;
+    opacity: 0.1;
 }
 
 .estadisticas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.estadistica-item {
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all var(--transition-normal);
+}
+
+.estadistica-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
 }
 
 .estadistica-numero {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
     display: block;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .estadistica-label {
     font-size: 1.2rem;
     opacity: 0.9;
+    font-weight: 500;
 }

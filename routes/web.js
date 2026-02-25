@@ -33,4 +33,20 @@ router.get('/contacto', (req, res) => {
     });
 });
 
+
+// ===== NUEVAS RUTAS DE NOTICIAS =====
+// Importar el controlador de noticias
+const noticiasController = require('../controllers/noticiasController');
+
+// Ruta para ver todas las noticias
+router.get('/noticias', noticiasController.viewAll);
+
+// Ruta para ver una noticia individual (con ID)
+router.get('/noticias/:id', noticiasController.viewSingle);
+
+
+
 module.exports = router;
+
+
+

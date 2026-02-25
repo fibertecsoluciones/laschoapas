@@ -1,37 +1,273 @@
-/* ===== SERVICIOS ===== */
+/* ===== SERVICIOS MODERNO - VERSIÓN COMPACTA ===== */
 .servicios {
     padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo decorativo */
+.servicios::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(240,92,0,0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.servicios .container {
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    color: var(--secondary);
-    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #f05c00, #ff8c00, #f05c00);
+    border-radius: 4px;
+}
+
+/* Grid de servicios - 4 columnas fijas en desktop */
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
 }
 
+/* Tarjetas de servicio - MÁS PEQUEÑAS */
 .servicio-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
+    background: white;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(240,92,0,0.1);
+}
+
+/* Borde superior decorativo */
+.servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f05c00, #ff8c00);
+    transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
-.servicio-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
+.servicio-card:hover::before {
+    transform: scaleX(1);
 }
 
+/* Icono - MÁS PEQUEÑO */
 .servicio-icon {
-    font-size: 3rem;
-    color: var(--primary);
+    font-size: 2.2rem;
+    color: #f05c00;
     margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.8rem;
+    background: rgba(240,92,0,0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.servicio-card:hover .servicio-icon {
+    transform: scale(1.05);
+    color: white;
+    background: #f05c00;
+}
+
+/* Título - MÁS PEQUEÑO */
+.servicio-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.servicio-card:hover h3 {
+    color: #f05c00;
+}
+
+/* Descripción - MÁS PEQUEÑA */
+.servicio-card p {
+    color: #7F8C8D;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+}
+
+/* Enlace - MÁS PEQUEÑO */
+.servicio-link {
+    color: #f05c00;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    background: rgba(240,92,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.servicio-link:hover {
+    background: #f05c00;
+    color: white;
+}
+
+.servicio-link:hover i {
+    transform: translateX(3px);
+}
+
+.servicio-link i {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+/* Responsive - Tablet (2 columnas) */
+@media (max-width: 992px) {
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Responsive - Móvil (1 columna) */
+@media (max-width: 576px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .servicio-card {
+        padding: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===== BOTÓN VER TODOS LOS TRÁMITES ===== */
+.servicios-footer {
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.servicios-footer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(240,92,0,0.2), transparent);
+    z-index: 1;
+}
+
+.btn-ver-todos {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #f05c00, #ff8c00);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(240,92,0,0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 2;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.btn-ver-todos:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 30px rgba(240,92,0,0.4);
+    background: linear-gradient(135deg, #ff8c00, #f05c00);
+}
+
+.btn-ver-todos i {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.btn-ver-todos:hover i {
+    transform: translateX(8px);
+}
+
+.btn-ver-todos span {
+    position: relative;
+}
+
+.btn-ver-todos span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.btn-ver-todos:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-ver-todos {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .servicios-footer {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-ver-todos {
+        width: 90%;
+        justify-content: center;
+    }
 }

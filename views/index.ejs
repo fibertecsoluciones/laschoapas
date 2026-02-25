@@ -4,7 +4,9 @@
 <section class="hero">
     <div class="hero-content">
         <h1 class="animate__animated animate__fadeInUp">H. Ayuntamiento de Las Choapas</h1>
-        <p class="animate__animated animate__fadeInUp animate__delay-1s">Tierra de energía y progreso</p>
+        <p class="slogan animate__animated animate__fadeInUp animate__delay-1s">
+            <span>Hechos No Palabras</span>
+        </p>
         <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
             <a href="/tramites" class="btn btn-primary">Trámites en Línea</a>
             <a href="/contacto" class="btn btn-outline">Contacto Ciudadano</a>
@@ -17,44 +19,131 @@
     <div class="container">
         <h2 class="section-title">Servicios en Línea</h2>
         <div class="servicios-grid">
+            <!-- SERVICIO 1 - PAGO DE PREDIAL -->
             <div class="servicio-card">
                 <i class="fas fa-file-invoice servicio-icon"></i>
                 <h3>Pago de Predial</h3>
                 <p>Consulta y paga tu impuesto predial en línea</p>
                 <a href="/tramites/predial" class="servicio-link">Realizar pago →</a>
             </div>
+
+            <!-- SERVICIO 2 - LICENCIAS MUNICIPALES -->
             <div class="servicio-card">
                 <i class="fas fa-id-card servicio-icon"></i>
                 <h3>Licencias Municipales</h3>
                 <p>Trámites para negocios y establecimientos</p>
                 <a href="/tramites/licencias" class="servicio-link">Solicitar →</a>
             </div>
+
+            <!-- SERVICIO 3 - REPORTE CIUDADANO -->
             <div class="servicio-card">
                 <i class="fas fa-exclamation-triangle servicio-icon"></i>
                 <h3>Reporte Ciudadano</h3>
                 <p>Reporta baches, alumbrado, basura y más</p>
                 <a href="/reportes" class="servicio-link">Reportar →</a>
             </div>
+
+            <!-- SERVICIO 4 - PERPETUIDAD PANTEÓN -->
             <div class="servicio-card">
-                <i class="fas fa-calendar-alt servicio-icon"></i>
-                <h3>Eventos Culturales</h3>
-                <p>Calendario de eventos y festividades</p>
-                <a href="/cultura" class="servicio-link">Ver eventos →</a>
+                <i class="fas fa-cross servicio-icon"></i>
+                <h3>Perpetuidad en Panteón</h3>
+                <p>Adquiere el derecho de perpetuidad en el Panteón Municipal</p>
+                <a href="/tramites/perpetuidad" class="servicio-link">Solicitar →</a>
             </div>
+
+            <!-- SERVICIO 5 - USO DE SUELO -->
+            <div class="servicio-card">
+                <i class="fas fa-store servicio-icon"></i>
+                <h3>Uso de Suelo</h3>
+                <p>Cambio de vivienda a comercio. Incluye revisión técnica</p>
+                <a href="/tramites/uso-suelo" class="servicio-link">Solicitar →</a>
+            </div>
+
+            <!-- SERVICIO 6 - CONSTANCIA DE NO ADEUDO -->
+            <div class="servicio-card">
+                <i class="fas fa-file-signature servicio-icon"></i>
+                <h3>Constancia de No Adeudo</h3>
+                <p>Certifica que no tienes adeudos con el municipio</p>
+                <a href="/tramites/no-adeudo" class="servicio-link">Solicitar →</a>
+            </div>
+        </div>
+
+        <!-- BOTÓN CENTRADO PARA VER TODOS LOS TRÁMITES -->
+        <div class="servicios-footer">
+            <a href="/tramites" class="btn-ver-todos">
+                <span>Ver todos los trámites y servicios</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- NOTICIAS DESTACADAS -->
-<section class="noticias">
+<!-- ===== SECCIÓN DE NOTICIAS CON PAGINACIÓN ===== -->
+<section class="noticias-page" id="noticias">
     <div class="container">
-        <h2 class="section-title">Noticias Destacadas</h2>
-        <div class="noticias-grid" id="noticias-container">
-            <!-- Se cargarán dinámicamente -->
-        </div>
-        <div class="text-center">
-            <a href="/noticias" class="btn btn-secondary">Ver todas las noticias</a>
-        </div>
+        <h2 class="section-title">Noticias y Eventos</h2>
+       
+        <!-- GRID DE NOTICIAS -->
+        <% if (noticias && noticias.length > 0) { %>
+            <div class="noticias-grid">
+                <% noticias.forEach(noticia => { %>
+                    <article class="noticia-card">
+                        <img src="<%= noticia.imagen || '/imagenes/default-news.jpg' %>" alt="<%= noticia.titulo %>">
+                        <div class="noticia-content">
+                            <span class="noticia-fecha">
+                                <i class="far fa-calendar-alt"></i> 
+                                <%= new Date(noticia.fecha).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+                            </span>
+                            <h3><%= noticia.titulo %></h3>
+                            <p><%= noticia.resumen %></p>
+                            <a href="/noticias/<%= noticia.id %>" class="read-more">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <p class="no-noticias">No hay noticias disponibles</p>
+        <% } %>
+        
+        <!-- ===== PAGINACIÓN CON ANCLAJE ===== -->
+        <% if (paginacion && paginacion.total > 1) { %>
+            <div class="paginacion">
+                <!-- Botón anterior -->
+                <% if (paginacion.anterior) { %>
+                    <a href="/?page=<%= paginacion.anterior %>#noticias" class="page-link prev">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </a>
+                <% } else { %>
+                    <span class="page-link disabled">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </span>
+                <% } %>
+                
+                <!-- Números de página -->
+                <div class="page-numbers">
+                    <% for (let i = 1; i <= paginacion.total; i++) { %>
+                        <% if (i === paginacion.actual) { %>
+                            <span class="page-number active"><%= i %></span>
+                        <% } else { %>
+                            <a href="/?page=<%= i %>#noticias" class="page-number"><%= i %></a>
+                        <% } %>
+                    <% } %>
+                </div>
+                
+                <!-- Botón siguiente -->
+                <% if (paginacion.siguiente) { %>
+                    <a href="/?page=<%= paginacion.siguiente %>#noticias" class="page-link next">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </a>
+                <% } else { %>
+                    <span class="page-link disabled">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </span>
+                <% } %>
+            </div>
+        <% } %>
     </div>
 </section>
 
@@ -157,31 +246,22 @@
     </div>    
 </section>
 
+<!-- Script para scroll suave -->
 <script>
-    // Cargar noticias destacadas
-    fetch('/api/noticias?destacadas=true&limite=3')
-        .then(res => res.json())
-        .then(noticias => {
-            const container = document.getElementById('noticias-container');
-            if (noticias && noticias.length > 0) {
-                container.innerHTML = noticias.map(noticia => `
-                    <article class="noticia-card">
-                        <img src="${noticia.imagen || '/images/default-news.jpg'}" alt="${noticia.titulo}">
-                        <div class="noticia-content">
-                            <span class="noticia-fecha">${new Date(noticia.fecha).toLocaleDateString()}</span>
-                            <h3>${noticia.titulo}</h3>
-                            <p>${noticia.resumen}</p>
-                            <a href="/noticias/${noticia.id}" class="read-more">Leer más →</a>
-                        </div>
-                    </article>
-                `).join('');
-            } else {
-                container.innerHTML = '<p>No hay noticias disponibles</p>';
-            }
-        })
-        .catch(error => {
-            console.error('Error cargando noticias:', error);
+    // Si hay un hash en la URL (#noticias), hacer scroll suave
+    if (window.location.hash === '#noticias') {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const noticiasSection = document.getElementById('noticias');
+                if (noticiasSection) {
+                    noticiasSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
         });
+    }
 </script>
 
 <%- include('layout/footer') %>

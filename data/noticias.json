@@ -1,0 +1,79 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Inauguración del nuevo mercado municipal",
+      "resumen": "El presidente municipal inauguró las nuevas instalaciones del mercado que beneficiará a más de 500 comerciantes.",
+      "contenido": "<p>En un evento histórico para el municipio, el presidente municipal encabezó la inauguración del nuevo mercado municipal. La obra tuvo una inversión de $15 millones de pesos y beneficiará directamente a más de 500 familias de comerciantes.</p><p>Las nuevas instalaciones cuentan con áreas modernas, accesibilidad universal, cámaras de seguridad y estacionamiento. Los locatarios expresaron su agradecimiento por esta obra que dignifica su trabajo.</p>",
+      "fecha": "2024-02-15",
+      "imagen": "/imagenes/noticias/tractor.jpg",
+      "destacada": true,
+      "categoria": "Obras"
+    },
+    {
+      "id": 2,
+      "titulo": "Jornada de vacunación en el centro de salud",
+      "resumen": "Este fin de semana se aplicarán refuerzos de COVID-19 e influenza en el centro de salud municipal.",
+      "contenido": "<p>La Secretaría de Salud en coordinación con el municipio invita a la jornada de vacunación que se llevará a cabo este sábado y domingo en el centro de salud de 9:00 a 15:00 horas.</p><p>Se aplicarán refuerzos contra COVID-19 para mayores de 18 años, así como vacuna contra la influenza para niños y adultos mayores. Es importante llevar comprobante de vacunación anterior y CURP.</p>",
+      "fecha": "2024-02-10",
+      "imagen": "/imagenes/noticias/noticia.jpg",
+      "destacada": true,
+      "categoria": "Salud"
+    },
+    {
+      "id": 3,
+      "titulo": "Convocatoria para la Feria de Las Choapas 2024",
+      "resumen": "Se abre la convocatoria para reinas, expositores y artistas para la Feria Municipal 2024.",
+      "contenido": "<p>El comité organizador de la Feria Las Choapas 2024 informa que ya están abiertas las convocatorias para participar en los diferentes eventos.</p><p>Se buscan candidatas a reina, expositores comerciales, artesanos, y talentos artísticos locales. Las bases se pueden consultar en la dirección de cultura municipal. El cierre de inscripciones será el 30 de marzo.</p>",
+      "fecha": "2024-02-05",
+      "imagen": "/imagenes/noticias/ganadero.jpg",
+      "destacada": true,
+      "categoria": "Cultura"
+    },
+    {
+      "id": 4,
+      "titulo": "Programa de bacheo en colonias del centro",
+      "resumen": "Inician trabajos de bacheo en las principales colonias de la ciudad.",
+      "contenido": "<p>La dirección de obras públicas informa que a partir de esta semana dará inicio el programa de bacheo en las colonias centro, Petrolera y Guayabal.</p><p>Los trabajos se realizarán en horario nocturno para evitar afectaciones al tráfico. Se invita a los ciudadanos a tomar precauciones y respetar los señalamientos.</p>",
+      "fecha": "2024-01-28",
+      "imagen": "/imagenes/noticias/carretera.jpg",
+      "destacada": true,
+      "categoria": "Obras"
+    },
+    {
+      "id": 5,
+      "titulo": "Descuento en pago de predial",
+      "resumen": "Aprovecha el 15% de descuento en el pago de predial durante febrero.",
+      "contenido": "<p>La tesorería municipal informa que durante todo el mes de febrero estará vigente el 15% de descuento en el pago del impuesto predial.</p><p>El pago puede realizarse en cajas del ayuntamiento, bancos autorizados y en línea a través del portal municipal. No dejes pasar esta oportunidad y cumple con tus obligaciones con descuento.</p>",
+      "fecha": "2024-01-20",
+      "imagen": "/imagenes/noticias/dron.jpg",
+      "destacada": true,
+      "categoria": "Servicios"
+    },
+
+{
+      "id": 6,
+      "titulo": "Descuento en pago de predial",
+      "resumen": "Aprovecha el 15% de descuento en el pago de predial durante febrero.",
+      "contenido": "<p>La tesorería municipal informa que durante todo el mes de febrero estará vigente el 15% de descuento en el pago del impuesto predial.</p><p>El pago puede realizarse en cajas del ayuntamiento, bancos autorizados y en línea a través del portal municipal. No dejes pasar esta oportunidad y cumple con tus obligaciones con descuento.</p>",
+      "fecha": "2024-01-20",
+      "imagen": "/imagenes/noticias/dron2.jpg",
+      "destacada": true,
+      "categoria": "Servicios"
+    },
+
+    {
+      "id": 7,
+      "titulo": "Descuento en pago de predial",
+      "resumen": "Aprovecha el 15% de descuento en el pago de predial durante febrero.",
+      "contenido": "<p>La tesorería municipal informa que durante todo el mes de febrero estará vigente el 15% de descuento en el pago del impuesto predial.</p><p>El pago puede realizarse en cajas del ayuntamiento, bancos autorizados y en línea a través del portal municipal. No dejes pasar esta oportunidad y cumple con tus obligaciones con descuento.</p>",
+      "fecha": "2024-01-20",
+      "imagen": "/imagenes/noticias/dron2.jpg",
+      "destacada": true,
+      "categoria": "Servicios"
+    }
+
+
+
+  ]
+}
