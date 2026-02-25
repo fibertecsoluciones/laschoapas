@@ -1,0 +1,84 @@
+<%- include('../layout/header') %>
+
+<section class="page-header">
+    <div class="container">
+        <h1>Transparencia y Rendición de Cuentas</h1>
+        <p>De acuerdo a la Ley de Transparencia del Estado de Veracruz</p>
+    </div>
+</section>
+
+<section class="transparencia-page">
+    <div class="container">
+        <div class="transparencia-grid">
+            <!-- Gasto Público -->
+            <div class="transparencia-card">
+                <i class="fas fa-chart-line transparencia-icon"></i>
+                <h3>Gasto Público</h3>
+                <ul>
+                    <li><strong>Egresos 2024:</strong> $XXX,XXX,XXX</li>
+                    <li><strong>Ingresos 2024:</strong> $XXX,XXX,XXX</li>
+                    <li><strong>Deuda Pública:</strong> $XXX,XXX</li>
+                </ul>
+                <a href="/transparencia/gasto" class="btn btn-small">Ver detalle</a>
+            </div>
+
+            <!-- Obras Públicas -->
+            <div class="transparencia-card">
+                <i class="fas fa-file-contract transparencia-icon"></i>
+                <h3>Obras Públicas</h3>
+                <ul>
+                    <li><strong>Obras en proceso:</strong> 12</li>
+                    <li><strong>Obras concluidas:</strong> 8</li>
+                    <li><strong>Inversión total:</strong> $XX,XXX,XXX</li>
+                </ul>
+                <a href="/transparencia/obras" class="btn btn-small">Ver obras</a>
+            </div>
+
+            <!-- Directorio -->
+            <div class="transparencia-card">
+                <i class="fas fa-users transparencia-icon"></i>
+                <h3>Directorio de Funcionarios</h3>
+                <ul>
+                    <li><strong>Presidente Municipal:</strong> Lic. Juan Pérez</li>
+                    <li><strong>Síndico:</strong> Lic. María García</li>
+                    <li><strong>Regidores:</strong> 8 funcionarios</li>
+                </ul>
+                <a href="/transparencia/directorio" class="btn btn-small">Ver todos</a>
+            </div>
+
+            <!-- Documentos Oficiales -->
+            <div class="transparencia-card">
+                <i class="fas fa-file-pdf transparencia-icon"></i>
+                <h3>Documentos Oficiales</h3>
+                <ul>
+                    <li><a href="#">Ley de Ingresos 2024</a></li>
+                    <li><a href="#">Presupuesto de Egresos</a></li>
+                    <li><a href="#">Acta de Cabildo</a></li>
+                </ul>
+                <a href="/transparencia/documentos" class="btn btn-small">Ver todos</a>
+            </div>
+        </div>
+
+        <!-- Marco Legal -->
+        <div class="marco-legal">
+            <h3>Marco Legal</h3>
+            <p>De conformidad con la Ley Número 875 de Transparencia y Acceso a la Información Pública del Estado de Veracruz, se pone a disposición de la ciudadanía la siguiente información:</p>
+            <ul>
+                <li>✔️ Artículo 6° de la Constitución Política</li>
+                <li>✔️ Ley General de Transparencia</li>
+                <li>✔️ Ley de Transparencia del Estado de Veracruz</li>
+            </ul>
+        </div>
+
+        <!-- Botón de solicitud -->
+        <div class="solicitud-info">
+            <h3>¿Necesitas información específica?</h3>
+            <p>Puedes realizar una solicitud de información a través de la Plataforma Nacional de Transparencia</p>
+            <a href="https://www.plataformadetransparencia.org.mx" target="_blank" class="btn-noticias">
+                Ir a la plataforma <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<%- include('../layout/footer') %>

@@ -23,3 +23,85 @@
     color: var(--primary);
     margin-bottom: 1rem;
 }
+
+/* ===== PÁGINA DE TRANSPARENCIA ===== */
+.transparencia-page {
+    padding: 4rem 0;
+}
+
+.transparencia-page .transparencia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.marco-legal {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 20px;
+    margin: 4rem 0;
+    border-left: 5px solid #f05c00;
+}
+
+.marco-legal h3 {
+    color: #2C3E50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.marco-legal ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.marco-legal ul li {
+    padding: 0.5rem 0;
+    color: #34495E;
+}
+
+.solicitud-info {
+    text-align: center;
+    background: linear-gradient(135deg, #f05c00, #ff8c00);
+    color: white;
+    padding: 4rem;
+    border-radius: 20px;
+}
+
+.solicitud-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.solicitud-info p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.solicitud-info .btn-noticias {
+    background: white;
+    color: #f05c00;
+    border: none;
+}
+
+.solicitud-info .btn-noticias:hover {
+    background: #2C3E50;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .marco-legal {
+        padding: 2rem;
+    }
+    
+    .solicitud-info {
+        padding: 2rem;
+    }
+    
+    .solicitud-info h3 {
+        font-size: 1.5rem;
+    }
+}

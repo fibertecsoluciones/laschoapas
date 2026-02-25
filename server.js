@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 🟢 RUTAS DIRECTAS (sin archivo externo)
+// 🟢 RUTAS DIRECTAS
 app.get('/', (req, res) => {
     try {
         const fs = require('fs');
@@ -23,11 +23,11 @@ app.get('/', (req, res) => {
         const data = fs.readFileSync(dataPath, 'utf8');
         const todasLasNoticias = JSON.parse(data).noticias;
         
-  // 📰 TODAS LAS NOTICIAS (sin filtrar)
-const noticiasParaMostrar = todasLasNoticias;  // ← Todas las noticias
+        // 📰 TODAS LAS NOTICIAS (sin filtro)
+        const noticiasParaMostrar = todasLasNoticias;
         
         // Ordenar por fecha (más recientes primero)
-        destacadas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+        noticiasParaMostrar.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
         
         // 📄 PAGINACIÓN
         const pagina = parseInt(req.query.page) || 1;
@@ -36,8 +36,8 @@ const noticiasParaMostrar = todasLasNoticias;  // ← Todas las noticias
         const fin = inicio + noticiasPorPagina;
         
         // Noticias de la página actual
-        const noticiasPagina = destacadas.slice(inicio, fin);
-        const totalPaginas = Math.ceil(destacadas.length / noticiasPorPagina);
+        const noticiasPagina = noticiasParaMostrar.slice(inicio, fin);
+        const totalPaginas = Math.ceil(noticiasParaMostrar.length / noticiasPorPagina);
         
         res.render('index', { 
             titulo: 'Inicio',
@@ -87,16 +87,21 @@ app.get('/contacto', (req, res) => {
     });
 });
 
+// Ruta de transparencia
+app.get('/transparencia', (req, res) => {
+    res.render('pages/transparencia', { 
+        titulo: 'Transparencia',
+        currentPage: 'transparencia'
+    });
+});
+
 // ===== RUTAS DE NOTICIAS =====
 const noticiasController = require('./controllers/noticiasController');
 
-// 🟢 Ruta para ver UNA noticia individual (SÍ la usamos)
+// Ruta para ver UNA noticia individual
 app.get('/noticias/:id', noticiasController.viewSingle);
 
-// 🔴 Ruta ELIMINADA - Ya no usamos página separada de noticias
-// app.get('/noticias', noticiasController.viewAllWithPagination);
-
-// ✅ Rutas API para datos JSON (estas SÍ se usan)
+// Rutas API para datos JSON
 app.get('/api/noticias', noticiasController.getAll);
 app.get('/api/noticias/destacadas', noticiasController.getDestacadas);
 app.get('/api/noticias/:id', noticiasController.getById);
