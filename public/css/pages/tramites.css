@@ -1,0 +1,339 @@
+/* ===== PÁGINA DE TRÁMITES ===== */
+
+/* ===== CATEGORÍAS ===== */
+.categorias-section {
+    padding: 2rem 0;
+    background: white;
+    border-bottom: 1px solid rgba(240,92,0,0.1);
+}
+
+.categorias-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.categoria-btn {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid #f05c00;
+    color: #f05c00;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.categoria-btn:hover,
+.categoria-btn.active {
+    background: #f05c00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240,92,0,0.3);
+}
+
+/* ===== LISTA DE TRÁMITES ===== */
+.tramites-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.tramites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.tramite-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tramite-card:hover {
+    transform: translateY(-5px);
+    border-color: #f05c00;
+    box-shadow: 0 20px 40px rgba(240,92,0,0.1);
+}
+
+.tramite-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tramite-icon {
+    font-size: 2.5rem;
+    color: #f05c00;
+    background: rgba(240,92,0,0.1);
+    padding: 0.8rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.tramite-card:hover .tramite-icon {
+    background: #f05c00;
+    color: white;
+    transform: rotate(5deg);
+}
+
+/* ===== NUEVO ESTADO INFORMATIVO ===== */
+.tramite-status.informativo {
+    background: #e7f3ff;
+    color: #0066cc;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tramite-card h3 {
+    font-size: 1.3rem;
+    color: #2C3E50;
+    margin-bottom: 0.8rem;
+}
+
+.tramite-descripcion {
+    color: #7F8C8D;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tramite-detalles {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #34495E;
+    font-size: 0.9rem;
+}
+
+.detalle-item i {
+    color: #f05c00;
+}
+
+/* ===== REQUISITOS MEJORADOS ===== */
+.tramite-requisitos {
+    background: rgba(240,92,0,0.02);
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #f05c00;
+}
+
+.tramite-requisitos p {
+    color: #2C3E50;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tramite-requisitos p:last-child {
+    margin-bottom: 0;
+}
+
+.tramite-requisitos i {
+    color: #27ae60;
+    width: 18px;
+}
+
+/* ===== BOTÓN DE VER REQUISITOS ===== */
+.btn-tramite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #2C3E50;  /* Color más neutro para informativo */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.btn-tramite:hover {
+    background: #f05c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240,92,0,0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .tramites-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tramite-detalles {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+
+/* ===== PREGUNTAS FRECUENTES ===== */
+.faq-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid rgba(240,92,0,0.1);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #f05c00;
+}
+
+.faq-pregunta {
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(240,92,0,0.02);
+}
+
+.faq-pregunta h3 {
+    font-size: 1rem;
+    color: #2C3E50;
+    margin: 0;
+}
+
+.faq-pregunta i {
+    color: #f05c00;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-pregunta i {
+    transform: rotate(180deg);
+}
+
+.faq-respuesta {
+    max-height: 0;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.faq-item.active .faq-respuesta {
+    max-height: 200px;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(240,92,0,0.1);
+}
+
+.faq-respuesta p {
+    color: #7F8C8D;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== CONTACTO TRÁMITES ===== */
+.contacto-tramites {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.contacto-tramites-box {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(240,92,0,0.1);
+}
+
+.contacto-tramites-box h3 {
+    font-size: 1.8rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.contacto-tramites-box p {
+    color: #7F8C8D;
+    margin-bottom: 2rem;
+}
+
+.contacto-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contacto-opciones .contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #f05c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.contacto-opciones .contacto-item:hover {
+    background: #ff8c00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(240,92,0,0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .tramites-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tramite-detalles {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .contacto-opciones {
+        flex-direction: column;
+    }
+    
+    .categoria-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

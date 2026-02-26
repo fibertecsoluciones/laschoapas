@@ -1,0 +1,363 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS: CONTACTO
+   ========================================= */
+
+.contact-page {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+/* Badge */
+.badge {
+    background: rgba(240,92,0,0.1);
+    color: #f05c00;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Layout: Sidebar + Formulario */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Sidebar de información */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(240,92,0,0.1);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    border-color: #f05c00;
+}
+
+.info-card.highlighted {
+    background: #f05c00;
+    color: white;
+    border: none;
+}
+
+.info-card.highlighted h4, 
+.info-card.highlighted p {
+    color: white;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: rgba(240,92,0,0.1);
+    color: #f05c00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info-card.highlighted .icon-circle {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.info-card h4 {
+    color: #2C3E50;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.info-card.highlighted h4 {
+    color: white;
+}
+
+.contacto-dato {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f05c00;
+    margin-bottom: 0.3rem;
+}
+
+.info-card.highlighted .contacto-dato {
+    color: white;
+}
+
+.contacto-ext {
+    color: #7F8C8D;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.info-card.highlighted .contacto-ext {
+    color: rgba(255,255,255,0.8);
+}
+
+.btn-contacto-sidebar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f05c00;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-contacto-sidebar.light {
+    color: white;
+}
+
+.btn-contacto-sidebar:hover {
+    gap: 0.8rem;
+}
+
+/* Formulario Moderno */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    color: #2C3E50;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: #7F8C8D;
+    margin-bottom: 2rem;
+}
+
+.ventanilla-info-compact {
+    background: rgba(240,92,0,0.03);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border-left: 3px solid #f05c00;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ventanilla-info-compact i {
+    color: #f05c00;
+}
+
+.info-badge-compact {
+    font-size: 0.8rem;
+    color: #7F8C8D;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.modern-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2C3E50;
+    font-size: 0.85rem;
+}
+
+.form-group label i {
+    color: #f05c00;
+    margin-right: 5px;
+    width: 16px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #f05c00;
+    outline: none;
+    box-shadow: 0 0 8px rgba(240,92,0,0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    accent-color: #f05c00;
+}
+
+.checkbox-label a {
+    color: #f05c00;
+    text-decoration: none;
+}
+
+/* Botón de envío */
+.btn-enviar {
+    background: #f05c00;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-enviar:hover {
+    background: #ff8c00;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(240,92,0,0.2);
+}
+
+/* Mapa */
+.mapa-section {
+    padding: 0 0 60px 0;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 450px;
+    position: relative;
+    height: 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Resultado del folio */
+.folio-resultado {
+    text-align: center;
+    padding: 30px;
+    background: rgba(240,92,0,0.02);
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px dashed #f05c00;
+}
+
+.folio-icono i {
+    font-size: 4rem;
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+.folio-numero {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f05c00;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+}
+
+.btn-nuevo-reporte {
+    padding: 10px 25px;
+    background: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-nuevo-reporte:hover {
+    background: #f05c00;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-sidebar {
+        grid-template-columns: 1fr;
+    }
+    
+    .modern-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-container {
+        padding: 25px;
+    }
+    
+    .map-responsive {
+        padding-bottom: 300px;
+    }
+}

@@ -1,0 +1,331 @@
+<%- include('../layout/header') %>
+
+<!-- ===== HEADER DE PÁGINA ===== -->
+<section class="page-header">
+    <div class="container">
+        <h1>Trámites y Servicios</h1>
+        <p class="frase-destacada">⚡ Hechos No Palabras ⚡</p>
+    </div>
+</section>
+
+<!-- ===== CATEGORÍAS DE TRÁMITES ===== -->
+<section class="categorias-section">
+    <div class="container">
+        <div class="categorias-filtros">
+            <button class="categoria-btn active" data-categoria="todos">Todos</button>
+            <button class="categoria-btn" data-categoria="predial">Predial</button>
+            <button class="categoria-btn" data-categoria="licencias">Licencias</button>
+            <button class="categoria-btn" data-categoria="registro-civil">Registro Civil</button>
+            <button class="categoria-btn" data-categoria="desarrollo-urbano">Desarrollo Urbano</button>
+            <button class="categoria-btn" data-categoria="desarrollo-social">Desarrollo Social</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== LISTA DE TRÁMITES ===== -->
+<section class="tramites-section">
+    <div class="container">
+        <div class="tramites-grid" id="tramites-container">
+            <!-- PREDIAL 1 -->
+            <div class="tramite-card" data-categoria="predial">
+                <div class="tramite-header">
+                    <i class="fas fa-home tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Pago de Predial</h3>
+                <p class="tramite-descripcion">Impuesto predial anual para propiedades inmobiliarias en el municipio.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 5 minutos</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Número de cuenta predial</li>
+                        <li><i class="fas fa-check-circle"></i> INE vigente</li>
+                        <li><i class="fas fa-check-circle"></i> Último recibo de pago (opcional)</li>
+                    </ul>
+                </div>
+                <a href="/tramites/predial" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- LICENCIA DE FUNCIONAMIENTO -->
+            <div class="tramite-card" data-categoria="licencias">
+                <div class="tramite-header">
+                    <i class="fas fa-store tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Licencia de Funcionamiento</h3>
+                <p class="tramite-descripcion">Permiso para operar negocios comerciales, industriales o de servicios en el municipio.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 3-5 días hábiles</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> INE del propietario</li>
+                        <li><i class="fas fa-check-circle"></i> Comprobante de domicilio</li>
+                        <li><i class="fas fa-check-circle"></i> Croquis de ubicación</li>
+                        <li><i class="fas fa-check-circle"></i> Uso de suelo (según giro)</li>
+                    </ul>
+                </div>
+                <a href="/tramites/licencia-funcionamiento" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- ACTA DE NACIMIENTO -->
+            <div class="tramite-card" data-categoria="registro-civil">
+                <div class="tramite-header">
+                    <i class="fas fa-baby tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Acta de Nacimiento</h3>
+                <p class="tramite-descripcion">Copia certificada de acta de nacimiento para trámites oficiales o personales.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 24 horas</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Nombre completo de la persona</li>
+                        <li><i class="fas fa-check-circle"></i> Fecha de nacimiento</li>
+                        <li><i class="fas fa-check-circle"></i> CURP</li>
+                        <li><i class="fas fa-check-circle"></i> Lugar de registro</li>
+                    </ul>
+                </div>
+                <a href="/tramites/acta-nacimiento" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- PERPETUIDAD PANTEÓN -->
+            <div class="tramite-card" data-categoria="desarrollo-urbano">
+                <div class="tramite-header">
+                    <i class="fas fa-cross tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Perpetuidad en Panteón</h3>
+                <p class="tramite-descripcion">Derecho de perpetuidad para un espacio físico en el Panteón Municipal.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 15 días hábiles</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> INE del solicitante</li>
+                        <li><i class="fas fa-check-circle"></i> Comprobante de domicilio</li>
+                        <li><i class="fas fa-check-circle"></i> Acta de defunción (si aplica)</li>
+                        <li><i class="fas fa-check-circle"></i> Comprobante de pago de derechos</li>
+                    </ul>
+                </div>
+                <a href="/tramites/perpetuidad" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- USO DE SUELO -->
+            <div class="tramite-card" data-categoria="desarrollo-urbano">
+                <div class="tramite-header">
+                    <i class="fas fa-draw-polygon tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Uso de Suelo</h3>
+                <p class="tramite-descripcion">Autorización para cambio de uso de suelo (de vivienda a comercio, industrial, etc.)</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 20 días hábiles</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Escrituras del predio</li>
+                        <li><i class="fas fa-check-circle"></i> INE del propietario</li>
+                        <li><i class="fas fa-check-circle"></i> Croquis de ubicación</li>
+                        <li><i class="fas fa-check-circle"></i> Pago de derechos</li>
+                    </ul>
+                </div>
+                <a href="/tramites/uso-suelo" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- CONSTANCIA DE NO ADEUDO -->
+            <div class="tramite-card" data-categoria="predial">
+                <div class="tramite-header">
+                    <i class="fas fa-file-signature tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Constancia de No Adeudo</h3>
+                <p class="tramite-descripcion">Documento que certifica que no existen adeudos de predial, agua u otros servicios municipales.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: 1-2 días hábiles</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Número de cuenta predial</li>
+                        <li><i class="fas fa-check-circle"></i> INE del propietario</li>
+                        <li><i class="fas fa-check-circle"></i> Último recibo pagado</li>
+                    </ul>
+                </div>
+                <a href="/tramites/no-adeudo" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- MATRIMONIO CIVIL -->
+            <div class="tramite-card" data-categoria="registro-civil">
+                <div class="tramite-header">
+                    <i class="fas fa-heart tramite-icon"></i>
+                    <span class="tramite-status informativo">Informativo</span>
+                </div>
+                <h3>Matrimonio Civil</h3>
+                <p class="tramite-descripcion">Contraer matrimonio civil en el municipio, incluye ceremonia y expedición de acta.</p>
+                <div class="tramite-detalles">
+                    <div class="detalle-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Tiempo estimado: Cita previa</span>
+                    </div>
+                </div>
+                <div class="tramite-requisitos">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Actas de nacimiento actualizadas</li>
+                        <li><i class="fas fa-check-circle"></i> INE de ambos contrayentes</li>
+                        <li><i class="fas fa-check-circle"></i> Certificado médico prenupcial</li>
+                        <li><i class="fas fa-check-circle"></i> 2 testigos por cada persona</li>
+                    </ul>
+                </div>
+                <a href="/tramites/matrimonio" class="btn-tramite">
+                    Ver todos los requisitos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PREGUNTAS FRECUENTES ===== -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-pregunta">
+                    <h3>¿Cómo puedo pagar mi predial?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-respuesta">
+                    <p>Puedes pagar en línea con tarjeta de crédito/débito, en bancos autorizados (BBVA, Banamex, Santander) o en las cajas del ayuntamiento de 9:00 a 15:00 horas.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">
+                    <h3>¿Qué necesito para sacar mi licencia de funcionamiento?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-respuesta">
+                    <p>INE, comprobante de domicilio, croquis de ubicación, y en algunos casos uso de suelo y dictamen de protección civil.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">
+                    <h3>¿Hay descuentos en el predial?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-respuesta">
+                    <p>Sí, durante enero hay 15% de descuento, en febrero 10% y en marzo 5%. Pensionados y jubilados tienen 50% todo el año.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-pregunta">
+                    <h3>¿Cómo sé cuánto debo de predial?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-respuesta">
+                    <p>Puedes consultar en línea con tu número de cuenta predial en nuestra plataforma, o acudir a tesorería municipal con tu última boleta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACTO PARA TRÁMITES ===== -->
+<section class="contacto-tramites">
+    <div class="container">
+        <div class="contacto-tramites-box">
+            <h3>¿Necesitas ayuda con un trámite?</h3>
+            <p>Comunícate con nuestra ventanilla única de atención ciudadana</p>
+            <div class="contacto-opciones">
+                <a href="tel:9231234567" class="contacto-item">
+                    <i class="fas fa-phone"></i> (923) 123-4567 ext. 200
+                </a>
+                <a href="mailto:tramites@laschoapas.gob.mx" class="contacto-item">
+                    <i class="fas fa-envelope"></i> tramites@laschoapas.gob.mx
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Filtro de categorías
+    document.querySelectorAll('.categoria-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Actualizar botones activos
+            document.querySelectorAll('.categoria-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filtrar trámites
+            const categoria = this.dataset.categoria;
+            document.querySelectorAll('.tramite-card').forEach(card => {
+                if (categoria === 'todos' || card.dataset.categoria === categoria) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-pregunta').forEach(pregunta => {
+        pregunta.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            faqItem.classList.toggle('active');
+            
+            const icon = this.querySelector('i');
+            if (faqItem.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    });
+</script>
+
+<%- include('../layout/footer') %>

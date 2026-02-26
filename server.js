@@ -112,6 +112,22 @@ app.get('/transparencia', (req, res) => {
     });
 });
 
+// Ruta de trámites (ya la tienes)
+app.get('/tramites', (req, res) => {
+    res.render('pages/tramites', { 
+        titulo: 'Trámites',
+        currentPage: 'tramites'
+    });
+});
+
+// Ruta de contacto (ya la tienes)
+app.get('/contacto', (req, res) => {
+    res.render('pages/contacto', { 
+        titulo: 'Contacto',
+        currentPage: 'contacto'
+    });
+});
+
 
 // ===== RUTAS DE NOTICIAS =====
 const noticiasController = require('./controllers/noticiasController');
