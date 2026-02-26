@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- En el <head> de header.ejs, después del CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <title><%= titulo ? titulo + ' | ' : '' %>H. Ayuntamiento de Las Choapas</title>
     
-    <!-- ⚠️ EL CSS SOLO VA AQUÍ, UNA SOLA VEZ -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="/css/main.css">
     
     <!-- Font Awesome -->
@@ -20,12 +20,17 @@
     <header class="header">
         <nav class="navbar container">
             <div class="logo">
-    <a href="/">
-        <img src="/imagenes/LOGO.png" alt="Las Choapas" class="logo-img">
-       
-    </a>
-</div>
-            <ul class="nav-menu">
+                <a href="/">
+                    <img src="/imagenes/LOGO.png" alt="Las Choapas" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- 🔴 BOTÓN HAMBURGUESA PARA MÓVIL (AGREGADO) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
                 <li class="<%= currentPage === 'inicio' ? 'active' : '' %>">
                     <a href="/">Inicio</a>
                 </li>
@@ -36,8 +41,8 @@
                     <a href="/tramites">Trámites</a>
                 </li>
                 <li class="<%= currentPage === 'transparencia' ? 'active' : '' %>">
-    <a href="/transparencia">Transparencia</a>
-</li>
+                    <a href="/transparencia">Transparencia</a>
+                </li>
                 <li class="<%= currentPage === 'contacto' ? 'active' : '' %>">
                     <a href="/contacto">Contacto</a>
                 </li>

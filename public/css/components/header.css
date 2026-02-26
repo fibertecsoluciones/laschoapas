@@ -24,6 +24,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 
 /* ===== LOGO CON IMAGEN ===== */
@@ -35,12 +36,11 @@
 }
 
 .logo-img {
-    height: 50px;        /* Ajusta según tu logo */
-    width: auto;          /* Mantiene proporción */
+    height: 50px;
+    width: auto;
     transition: all var(--transition-normal);
 }
 
-/* Efecto hover en el logo */
 .logo:hover .logo-img {
     transform: scale(1.05);
 }
@@ -54,23 +54,7 @@
     background-clip: text;
 }
 
-/* Responsive para móviles */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 40px;
-    }
-    
-    .logo-text {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-text {
-        display: none;  /* Oculta el texto en móviles muy pequeños */
-    }
-}
-
+/* ===== MENÚ DE NAVEGACIÓN ===== */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -112,4 +96,85 @@
 .nav-menu li.active a {
     color: var(--primary);
     font-weight: 600;
+}
+
+/* ===== BOTÓN HAMBURGUESA (NUEVO) ===== */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--gray-900);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all var(--transition-normal);
+    z-index: 1001;
+}
+
+.menu-toggle:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE PARA MÓVILES ===== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;  /* 🔹 MUESTRA EL BOTÓN EN MÓVIL */
+    }
+    
+    .nav-menu {
+        display: none;  /* 🔹 OCULTA EL MENÚ INICIALMENTE */
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        box-shadow: var(--shadow-md);
+        z-index: 1000;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-menu.active {
+        display: flex;  /* 🔹 MUESTRA EL MENÚ CON LA CLASE ACTIVE */
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    
+    .nav-menu li a::after {
+        display: none;  /* 🔹 OCULTA LA LÍNEA EN MÓVIL */
+    }
+    
+    .nav-menu li.active a {
+        background: rgba(240,92,0,0.05);
+        color: var(--primary);
+    }
+    
+    /* Ajustes de logo en móvil */
+    .logo-img {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        display: none;  /* 🔹 OCULTA EL TEXTO EN MÓVILES MUY PEQUEÑOS */
+    }
 }
