@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 🟢 RUTAS DIRECTAS
+// ===== RUTAS PRINCIPALES =====
 app.get('/', (req, res) => {
     try {
         const fs = require('fs');
@@ -23,10 +23,8 @@ app.get('/', (req, res) => {
         const data = fs.readFileSync(dataPath, 'utf8');
         const todasLasNoticias = JSON.parse(data).noticias;
         
-        // 📰 TODAS LAS NOTICIAS (sin filtro)
+        // 📰 TODAS LAS NOTICIAS
         const noticiasParaMostrar = todasLasNoticias;
-        
-        // Ordenar por fecha (más recientes primero)
         noticiasParaMostrar.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
         
         // 📄 PAGINACIÓN
@@ -35,7 +33,6 @@ app.get('/', (req, res) => {
         const inicio = (pagina - 1) * noticiasPorPagina;
         const fin = inicio + noticiasPorPagina;
         
-        // Noticias de la página actual
         const noticiasPagina = noticiasParaMostrar.slice(inicio, fin);
         const totalPaginas = Math.ceil(noticiasParaMostrar.length / noticiasPorPagina);
         
@@ -80,14 +77,6 @@ app.get('/tramites', (req, res) => {
     });
 });
 
-app.get('/contacto', (req, res) => {
-    res.render('pages/contacto', { 
-        titulo: 'Contacto',
-        currentPage: 'contacto'
-    });
-});
-
-// Ruta de transparencia
 app.get('/transparencia', (req, res) => {
     res.render('pages/transparencia', { 
         titulo: 'Transparencia',
@@ -95,7 +84,6 @@ app.get('/transparencia', (req, res) => {
     });
 });
 
-// Ruta para convocatorias
 app.get('/convocatorias', (req, res) => {
     res.render('pages/convocatorias', { 
         titulo: 'Convocatorias',
@@ -103,31 +91,12 @@ app.get('/convocatorias', (req, res) => {
     });
 });
 
-
-// Ruta de transparencia (ya la tienes)
-app.get('/transparencia', (req, res) => {
-    res.render('pages/transparencia', { 
-        titulo: 'Transparencia',
-        currentPage: 'transparencia'
-    });
-});
-
-// Ruta de trámites (ya la tienes)
-app.get('/tramites', (req, res) => {
-    res.render('pages/tramites', { 
-        titulo: 'Trámites',
-        currentPage: 'tramites'
-    });
-});
-
-// Ruta de contacto (ya la tienes)
 app.get('/contacto', (req, res) => {
     res.render('pages/contacto', { 
         titulo: 'Contacto',
         currentPage: 'contacto'
     });
 });
-
 
 // ===== RUTAS DE NOTICIAS =====
 const noticiasController = require('./controllers/noticiasController');
@@ -141,12 +110,18 @@ app.get('/api/noticias/destacadas', noticiasController.getDestacadas);
 app.get('/api/noticias/:id', noticiasController.getById);
 app.get('/api/noticias/destacadas-paginadas', noticiasController.getDestacadasPaginadas);
 
+// ===== HEALTH CHECK (OPCIONAL PERO RECOMENDADO) =====
+app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+});
+
 // Iniciar servidor
 app.listen(PORT, () => {
     console.log(`
     ╔══════════════════════════════════════╗
-    ║   ✅ SERVIDOR CORRIENDO CORRECTAMENTE ║
-    ║   📡 http://localhost:${PORT}          ║
+    ║   🚀 LASCHOAPAS STAR - PRODUCCIÓN   ║
+    ║   📡 Puerto: ${PORT}                  ║
+    ║   🌍 Modo: ${process.env.NODE_ENV || 'development'} ║
     ╚══════════════════════════════════════╝
     `);
 });
