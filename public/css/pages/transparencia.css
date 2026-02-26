@@ -1,0 +1,645 @@
+/* ===== PÁGINA DE TRANSPARENCIA ===== */
+
+/* ===== MARCO LEGAL ===== */
+.marco-legal-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.marco-legal-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid rgba(240,92,0,0.1);
+}
+
+.marco-legal-card i {
+    font-size: 3rem;
+    color: #f05c00;
+    margin-bottom: 1rem;
+}
+
+.marco-legal-card h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.marco-legal-card p {
+    color: #7F8C8D;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.marco-legal-card ul {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.marco-legal-card ul li {
+    padding: 0.5rem 0;
+    color: #34495E;
+}
+
+/* ===== OBLIGACIONES ===== */
+.obligaciones-section {
+    padding: 4rem 0;
+}
+
+.obligaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.obligacion-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.obligacion-card:hover {
+    transform: translateY(-5px);
+    border-color: #f05c00;
+    box-shadow: 0 20px 40px rgba(240,92,0,0.1);
+}
+
+.obligacion-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.obligacion-numero {
+    width: 40px;
+    height: 40px;
+    background: #f05c00;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.obligacion-header h3 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+}
+
+.obligacion-card ul {
+    list-style: none;
+}
+
+.obligacion-card ul li {
+    margin-bottom: 1rem;
+}
+
+.obligacion-card ul li a {
+    color: #7F8C8D;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.obligacion-card ul li a:hover {
+    color: #f05c00;
+    transform: translateX(5px);
+}
+
+/* ===== INFORMACIÓN FINANCIERA ===== */
+.financiera-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.financiera-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.financiera-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(240,92,0,0.1);
+}
+
+.financiera-card h3 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.financiera-monto {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(240,92,0,0.05), rgba(255,140,0,0.05));
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.monto {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f05c00;
+}
+
+.periodo {
+    color: #7F8C8D;
+    font-size: 0.9rem;
+}
+
+.financiera-detalle {
+    margin: 1.5rem 0;
+}
+
+.detalle-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.porcentaje {
+    font-weight: 600;
+    color: #f05c00;
+}
+
+.btn-financiera {
+    display: inline-block;
+    color: #f05c00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-financiera:hover {
+    color: #ff8c00;
+    transform: translateX(5px);
+}
+
+/* ===== OBRAS PÚBLICAS ===== */
+.obras-section {
+    padding: 4rem 0;
+}
+
+.obras-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0 2rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid #f05c00;
+    color: #f05c00;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #f05c00;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.obras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.obra-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(240,92,0,0.1);
+}
+
+.obra-estado {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: #f05c00;
+    color: white;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.obra-estado.concluida {
+    background: #27ae60;
+}
+
+.obra-card h3 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #f05c00, #ff8c00);
+    color: white;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== SOLICITUDES ===== */
+.solicitudes-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.solicitudes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 🔹 AHORA 4 COLUMNAS */
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.solicitud-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.solicitud-card:hover {
+    transform: translateY(-5px);
+    border-color: #f05c00;
+    box-shadow: 0 15px 30px rgba(240,92,0,0.1);
+}
+
+.solicitud-card i {
+    font-size: 2.5rem;
+    color: #f05c00;
+    margin-bottom: 1rem;
+}
+
+.solicitud-card h3 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.solicitud-card p {
+    color: #7F8C8D;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.btn-solicitud {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: #f05c00;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid #f05c00;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-solicitud:hover {
+    background: #f05c00;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .solicitudes-grid {
+        grid-template-columns: repeat(2, 1fr);  /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .solicitudes-grid {
+        grid-template-columns: 1fr;  /* 1 columna en móviles */
+    }
+}
+
+/* ===== LOGOS DE INSTITUCIONES ===== */
+.solicitud-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.solicitud-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.solicitud-card:hover .solicitud-logo {
+    border-color: #f05c00;
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(240,92,0,0.15);
+}
+
+.logo-institucion {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Opción 2: Si prefieres logos más pequeños */
+.solicitud-logo.small {
+    width: 80px;
+    height: 80px;
+}
+
+/* Opción 3: Si prefieres logos cuadrados */
+.solicitud-logo.square {
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+}
+
+
+
+/* ===== ESTADÍSTICAS ===== */
+.estadisticas-transparencia {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f05c00, #ff8c00);
+    color: white;
+}
+
+.stats-transparencia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.stats-item {
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.stats-numero {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stats-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .financiera-grid,
+    .solicitudes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .marco-legal-card {
+        padding: 2rem;
+    }
+    
+    .marco-legal-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .obras-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .stats-transparencia-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .obligacion-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ===== SECCIÓN DE DOCUMENTOS ===== */
+.documentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.documento-card {
+    background: white;
+    padding: 3rem 1.9rem 1.9rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.documento-card:hover {
+    transform: translateY(-5px);
+    border-color: #f05c00;
+    box-shadow: 0 15px 30px rgba(240,92,0,0.1);
+}
+
+.documento-icono i {
+    font-size: 3rem;
+    color: #f05c00;
+    margin-bottom: 1rem;
+}
+
+.documento-card h3 {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.documento-card p {
+    color: #7F8C8D;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.documento-meta {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    margin-bottom: 1.2rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.documento-meta i {
+    margin-right: 0.3rem;
+}
+
+/* Estado de obra */
+.documento-estado {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 1rem;
+    background: #27ae60;
+    color: white;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.documento-estado.proceso {
+    background: #f39c12;
+}
+
+/* Botón de descarga */
+.btn-descargar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background: #2C3E50;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn-descargar:hover {
+    background: #f05c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240,92,0,0.3);
+}
+
+.btn-descargar i {
+    font-size: 1rem;
+}
+
+/* Tabs */
+.obras-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 2px solid #f05c00;
+    color: #f05c00;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #f05c00;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .obras-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}

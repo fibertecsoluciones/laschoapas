@@ -1,0 +1,258 @@
+/* ===== SECCIÓN DE CONVOCATORIAS ===== */
+.convocatorias {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo decorativo */
+.convocatorias::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(240,92,0,0.02) 0%, transparent 100%);
+    z-index: 0;
+}
+
+.convocatorias .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7F8C8D;
+    font-size: 1.2rem;
+    margin-top: -1rem;
+    margin-bottom: 3rem;
+}
+
+/* Grid de convocatorias */
+.convocatorias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Tarjeta de convocatoria */
+.convocatoria-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    border: 1px solid rgba(240,92,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.convocatoria-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(240,92,0,0.15);
+    border-color: rgba(240,92,0,0.3);
+}
+
+/* Badge de "NUEVA" */
+.convocatoria-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f05c00;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 5px 10px rgba(240,92,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Header de la convocatoria */
+.convocatoria-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.convocatoria-icon {
+    font-size: 2.5rem;
+    color: #f05c00;
+    background: rgba(240,92,0,0.1);
+    padding: 0.8rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.convocatoria-card:hover .convocatoria-icon {
+    background: #f05c00;
+    color: white;
+    transform: rotate(5deg);
+}
+
+.convocatoria-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2C3E50;
+    line-height: 1.3;
+}
+
+/* Fechas */
+.convocatoria-fecha {
+    color: #7F8C8D;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.convocatoria-fecha i {
+    color: #f05c00;
+    width: 20px;
+}
+
+.convocatoria-fecha.cierre {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+/* Descripción */
+.convocatoria-descripcion {
+    color: #34495E;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Requisitos */
+.convocatoria-requisitos {
+    background: rgba(240,92,0,0.03);
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.convocatoria-requisitos strong {
+    color: #2C3E50;
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.convocatoria-requisitos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.convocatoria-requisitos ul li {
+    color: #7F8C8D;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.convocatoria-requisitos ul li::before {
+    content: '•';
+    color: #f05c00;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Botón de convocatoria */
+.btn-convocatoria {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f05c00;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.8rem 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(240,92,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-convocatoria:hover {
+    color: #ff8c00;
+    gap: 1rem;
+}
+
+.btn-convocatoria i {
+    transition: transform 0.3s ease;
+}
+
+.btn-convocatoria:hover i {
+    transform: translateX(5px);
+}
+
+/* Botón Ver todas las convocatorias */
+.convocatorias-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.btn-ver-todas {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #f05c00, #ff8c00);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(240,92,0,0.3);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+}
+
+.btn-ver-todas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(240,92,0,0.4);
+    background: linear-gradient(135deg, #ff8c00, #f05c00);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .convocatorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .convocatorias {
+        padding: 4rem 0;
+    }
+    
+    .convocatorias-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .convocatoria-card {
+        padding: 1.5rem;
+    }
+}

@@ -95,6 +95,24 @@ app.get('/transparencia', (req, res) => {
     });
 });
 
+// Ruta para convocatorias
+app.get('/convocatorias', (req, res) => {
+    res.render('pages/convocatorias', { 
+        titulo: 'Convocatorias',
+        currentPage: 'convocatorias'
+    });
+});
+
+
+// Ruta de transparencia (ya la tienes)
+app.get('/transparencia', (req, res) => {
+    res.render('pages/transparencia', { 
+        titulo: 'Transparencia',
+        currentPage: 'transparencia'
+    });
+});
+
+
 // ===== RUTAS DE NOTICIAS =====
 const noticiasController = require('./controllers/noticiasController');
 

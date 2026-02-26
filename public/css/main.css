@@ -13,3 +13,6 @@
 @import url('components/footer.css');
 @import url('utils/animations.css');
 @import url('utils/responsive.css');
+@import url('sections/convocatorias.css');
+@import url('pages/gobierno.css');
+@import url('pages/transparencia.css');

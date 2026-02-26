@@ -1,82 +1,334 @@
 <%- include('../layout/header') %>
 
+<!-- ===== HEADER DE PÁGINA ===== -->
 <section class="page-header">
     <div class="container">
         <h1>Transparencia y Rendición de Cuentas</h1>
-        <p>De acuerdo a la Ley de Transparencia del Estado de Veracruz</p>
+        <p class="frase-destacada">⚡ Hechos No Palabras ⚡</p>
     </div>
 </section>
 
-<section class="transparencia-page">
+<!-- ===== MARCO LEGAL ===== -->
+<section class="marco-legal-section">
     <div class="container">
-        <div class="transparencia-grid">
-            <!-- Gasto Público -->
-            <div class="transparencia-card">
-                <i class="fas fa-chart-line transparencia-icon"></i>
-                <h3>Gasto Público</h3>
-                <ul>
-                    <li><strong>Egresos 2024:</strong> $XXX,XXX,XXX</li>
-                    <li><strong>Ingresos 2024:</strong> $XXX,XXX,XXX</li>
-                    <li><strong>Deuda Pública:</strong> $XXX,XXX</li>
-                </ul>
-                <a href="/transparencia/gasto" class="btn btn-small">Ver detalle</a>
-            </div>
-
-            <!-- Obras Públicas -->
-            <div class="transparencia-card">
-                <i class="fas fa-file-contract transparencia-icon"></i>
-                <h3>Obras Públicas</h3>
-                <ul>
-                    <li><strong>Obras en proceso:</strong> 12</li>
-                    <li><strong>Obras concluidas:</strong> 8</li>
-                    <li><strong>Inversión total:</strong> $XX,XXX,XXX</li>
-                </ul>
-                <a href="/transparencia/obras" class="btn btn-small">Ver obras</a>
-            </div>
-
-            <!-- Directorio -->
-            <div class="transparencia-card">
-                <i class="fas fa-users transparencia-icon"></i>
-                <h3>Directorio de Funcionarios</h3>
-                <ul>
-                    <li><strong>Presidente Municipal:</strong> Lic. Juan Pérez</li>
-                    <li><strong>Síndico:</strong> Lic. María García</li>
-                    <li><strong>Regidores:</strong> 8 funcionarios</li>
-                </ul>
-                <a href="/transparencia/directorio" class="btn btn-small">Ver todos</a>
-            </div>
-
-            <!-- Documentos Oficiales -->
-            <div class="transparencia-card">
-                <i class="fas fa-file-pdf transparencia-icon"></i>
-                <h3>Documentos Oficiales</h3>
-                <ul>
-                    <li><a href="#">Ley de Ingresos 2024</a></li>
-                    <li><a href="#">Presupuesto de Egresos</a></li>
-                    <li><a href="#">Acta de Cabildo</a></li>
-                </ul>
-                <a href="/transparencia/documentos" class="btn btn-small">Ver todos</a>
-            </div>
-        </div>
-
-        <!-- Marco Legal -->
-        <div class="marco-legal">
-            <h3>Marco Legal</h3>
-            <p>De conformidad con la Ley Número 875 de Transparencia y Acceso a la Información Pública del Estado de Veracruz, se pone a disposición de la ciudadanía la siguiente información:</p>
+        <div class="marco-legal-card">
+            <i class="fas fa-gavel"></i>
+            <h2>Marco Legal</h2>
+            <p>De conformidad con la Ley Número 875 de Transparencia y Acceso a la Información Pública del Estado de Veracruz, ponemos a tu disposición la siguiente información:</p>
             <ul>
                 <li>✔️ Artículo 6° de la Constitución Política</li>
                 <li>✔️ Ley General de Transparencia</li>
                 <li>✔️ Ley de Transparencia del Estado de Veracruz</li>
             </ul>
         </div>
+    </div>
+</section>
 
-        <!-- Botón de solicitud -->
-        <div class="solicitud-info">
-            <h3>¿Necesitas información específica?</h3>
-            <p>Puedes realizar una solicitud de información a través de la Plataforma Nacional de Transparencia</p>
-            <a href="https://www.plataformadetransparencia.org.mx" target="_blank" class="btn-noticias">
-                Ir a la plataforma <i class="fas fa-external-link-alt"></i>
-            </a>
+<!-- ===== OBLIGACIONES DE TRANSPARENCIA ===== -->
+<section class="obligaciones-section">
+    <div class="container">
+        <h2 class="section-title">Obligaciones de Transparencia</h2>
+        <p class="section-subtitle">Información fundamental del municipio</p>
+        
+        <div class="obligaciones-grid">
+            <!-- Fracción I -->
+            <div class="obligacion-card">
+                <div class="obligacion-header">
+                    <span class="obligacion-numero">I</span>
+                    <h3>Marco Normativo</h3>
+                </div>
+                <ul>
+                    <li><a href="#">📄 Ley de Ingresos 2024</a></li>
+                    <li><a href="#">📄 Presupuesto de Egresos 2024</a></li>
+                    <li><a href="#">📄 Reglamento Interior</a></li>
+                    <li><a href="#">📄 Bando de Policía y Gobierno</a></li>
+                </ul>
+            </div>
+
+            <!-- Fracción II -->
+            <div class="obligacion-card">
+                <div class="obligacion-header">
+                    <span class="obligacion-numero">II</span>
+                    <h3>Directorio de Funcionarios</h3>
+                </div>
+                <ul>
+                    <li><a href="/gobierno">👥 Directorio completo</a></li>
+                    <li><a href="#">💰 Remuneraciones mensuales</a></li>
+                    <li><a href="#">📋 Currículum vitae</a></li>
+                    <li><a href="#">📝 Declaraciones patrimoniales</a></li>
+                </ul>
+            </div>
+
+            <!-- Fracción III -->
+            <div class="obligacion-card">
+                <div class="obligacion-header">
+                    <span class="obligacion-numero">III</span>
+                    <h3>Estructura Orgánica</h3>
+                </div>
+                <ul>
+                    <li><a href="#">🏛️ Organigrama completo</a></li>
+                    <li><a href="#">📋 Manual de organización</a></li>
+                    <li><a href="#">⚙️ Funciones por área</a></li>
+                </ul>
+            </div>
+
+            <!-- Fracción IV -->
+            <div class="obligacion-card">
+                <div class="obligacion-header">
+                    <span class="obligacion-numero">IV</span>
+                    <h3>Metas y Objetivos</h3>
+                </div>
+                <ul>
+                    <li><a href="#">📊 Plan Municipal de Desarrollo</a></li>
+                    <li><a href="#">📈 Programas operativos anuales</a></li>
+                    <li><a href="#">📉 Indicadores de gestión</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INFORMACIÓN FINANCIERA ===== -->
+<section class="financiera-section">
+    <div class="container">
+        <h2 class="section-title">Información Financiera</h2>
+        <p class="section-subtitle">Documentos oficiales para descargar</p>
+        
+        <div class="documentos-grid">
+            <!-- Documento 1 - Ley de Ingresos -->
+            <div class="documento-card">
+                <div class="documento-icono">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Ley de Ingresos 2024</h3>
+                <p>Documento que establece los ingresos del municipio para el ejercicio fiscal 2024</p>
+                <div class="documento-meta">
+                    <span><i class="far fa-file-pdf"></i> PDF · 2.4 MB</span>
+                </div>
+                <a href="/docs/ley-ingresos-2024.pdf" class="btn-descargar" download>
+                    <i class="fas fa-download"></i> Descargar
+                </a>
+            </div>
+
+            <!-- Documento 2 - Presupuesto de Egresos -->
+            <div class="documento-card">
+                <div class="documento-icono">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h3>Presupuesto de Egresos 2024</h3>
+                <p>Detalle del gasto público autorizado para el ejercicio fiscal 2024</p>
+                <div class="documento-meta">
+                    <span><i class="far fa-file-excel"></i> Excel · 1.8 MB</span>
+                </div>
+                <a href="/docs/egresos-2024.xlsx" class="btn-descargar" download>
+                    <i class="fas fa-download"></i> Descargar
+                </a>
+            </div>
+
+            <!-- Documento 3 - Estado Financiero -->
+            <div class="documento-card">
+                <div class="documento-icono">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Estado Financiero Trimestral</h3>
+                <p>Informe detallado de ingresos y egresos del primer trimestre 2024</p>
+                <div class="documento-meta">
+                    <span><i class="far fa-file-pdf"></i> PDF · 1.2 MB</span>
+                </div>
+                <a href="/docs/estado-financiero-q1-2024.pdf" class="btn-descargar" download>
+                    <i class="fas fa-download"></i> Descargar
+                </a>
+            </div>
+
+            <!-- Documento 4 - Deuda Pública -->
+            <div class="documento-card">
+                <div class="documento-icono">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Informe de Deuda Pública</h3>
+                <p>Detalle de la deuda municipal al cierre del ejercicio 2023</p>
+                <div class="documento-meta">
+                    <span><i class="far fa-file-pdf"></i> PDF · 0.9 MB</span>
+                </div>
+                <a href="/docs/deuda-publica-2023.pdf" class="btn-descargar" download>
+                    <i class="fas fa-download"></i> Descargar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OBRAS PÚBLICAS ===== -->
+<section class="obras-section">
+    <div class="container">
+        <h2 class="section-title">Obras Públicas</h2>
+        <p class="section-subtitle">Documentos y expedientes técnicos</p>
+        
+        <div class="obras-tabs">
+            <button class="tab-btn active" data-tab="expedientes">Expedientes de obra</button>
+            <button class="tab-btn" data-tab="planos">Planos y proyectos</button>
+            <button class="tab-btn" data-tab="licitaciones">Licitaciones</button>
+        </div>
+
+        <!-- TAB 1: EXPEDIENTES DE OBRA -->
+        <div class="tab-content active" id="expedientes">
+            <div class="documentos-grid">
+                <!-- Expediente 1 -->
+                <div class="documento-card obra-documento">
+                    <span class="documento-estado">CONCLUIDA</span>
+                    <h3>Pavimentación calle Independencia</h3>
+                    <p><strong>Inversión:</strong> $2,500,000</p>
+                    <p><strong>Período:</strong> Ene - Abr 2024</p>
+                    <div class="documento-meta">
+                        <span><i class="far fa-file-pdf"></i> Expediente completo · 5.2 MB</span>
+                    </div>
+                    <a href="/docs/obra-independencia.pdf" class="btn-descargar" download>
+                        <i class="fas fa-download"></i> Descargar expediente
+                    </a>
+                </div>
+
+                <!-- Expediente 2 -->
+                <div class="documento-card obra-documento">
+                    <span class="documento-estado proceso">EN PROCESO</span>
+                    <h3>Construcción de pozo profundo</h3>
+                    <p><strong>Inversión:</strong> $1,800,000</p>
+                    <p><strong>Período:</strong> Feb - May 2024</p>
+                    <div class="documento-meta">
+                        <span><i class="far fa-file-pdf"></i> Expediente técnico · 3.8 MB</span>
+                    </div>
+                    <a href="/docs/pozo.pdf" class="btn-descargar" download>
+                        <i class="fas fa-download"></i> Descargar expediente
+                    </a>
+                </div>
+
+                <!-- Expediente 3 -->
+                <div class="documento-card obra-documento">
+                    <span class="documento-estado">CONCLUIDA</span>
+                    <h3>Techado de cancha deportiva</h3>
+                    <p><strong>Inversión:</strong> $950,000</p>
+                    <p><strong>Período:</strong> Oct - Dic 2023</p>
+                    <div class="documento-meta">
+                        <span><i class="far fa-file-pdf"></i> Expediente completo · 4.1 MB</span>
+                    </div>
+                    <a href="/docs/techado.pdf" class="btn-descargar" download>
+                        <i class="fas fa-download"></i> Descargar expediente
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: PLANOS Y PROYECTOS -->
+        <div class="tab-content" id="planos">
+            <div class="documentos-grid">
+                <div class="documento-card">
+                    <i class="fas fa-draw-polygon"></i>
+                    <h3>Plano general del municipio</h3>
+                    <p>Plano catastral actualizado 2024</p>
+                    <a href="/docs/plano-general.pdf" download>Descargar PDF</a>
+                </div>
+                <div class="documento-card">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Proyecto de pavimentación</h3>
+                    <p>Planos ejecutivos calle Independencia</p>
+                    <a href="/docs/planos-independencia.zip" download>Descargar ZIP</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 3: LICITACIONES -->
+        <div class="tab-content" id="licitaciones">
+            <div class="documentos-grid">
+                <div class="documento-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Licitación LO-001/2024</h3>
+                    <p>Construcción de mercado municipal</p>
+                    <a href="/docs/licitacion-mercado.pdf" download>Descargar bases</a>
+                </div>
+                <div class="documento-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Licitación LO-002/2024</h3>
+                    <p>Rehabilitación de alumbrado público</p>
+                    <a href="/docs/licitacion-alumbrado.pdf" download>Descargar bases</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SOLICITUDES DE INFORMACIÓN ===== -->
+<section class="solicitudes-section">
+    <div class="container">
+        <h2 class="section-title">Solicitudes de Información</h2>
+        <p class="section-subtitle">Instancias a las que puedes recurrir</p>
+        
+        <div class="solicitudes-grid">
+            <!-- Plataforma Nacional de Transparencia -->
+            <div class="solicitud-card">
+                <div class="solicitud-logo">
+                    <img src="/imagenes/transparencia/pnt.png" alt="PNT" class="logo-institucion">
+                </div>
+                <h3>Plataforma Nacional de Transparencia</h3>
+                <p>Sistema de solicitudes de acceso a la información, datos personales y recursos de revisión a nivel federal.</p>
+                <a href="https://www.plataformadetransparencia.org.mx" target="_blank" class="btn-solicitud">
+                    Ir a la PNT <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+            
+            <!-- IVAI (Instituto Veracruzano de Acceso a la Información) -->
+            <div class="solicitud-card">
+                <div class="solicitud-logo">
+                    <img src="/imagenes/transparencia/ivai.png" alt="IVAI" class="logo-institucion">
+                </div>
+                <h3>IVAI</h3>
+                <p>Instituto Veracruzano de Acceso a la Información y Protección de Datos Personales</p>
+                <a href="https://www.ivai.org.mx" target="_blank" class="btn-solicitud">
+                    Ir al sitio <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+            
+            <!-- ORFIS -->
+            <div class="solicitud-card">
+                <div class="solicitud-logo">
+                    <img src="/imagenes/transparencia/orfis.png" alt="ORFIS" class="logo-institucion">
+                </div>
+                <h3>ORFIS</h3>
+                <p>Órgano de Fiscalización Superior del Estado de Veracruz. Supervisa la correcta aplicación de recursos públicos.</p>
+                <a href="http://www.orfis.gob.mx" target="_blank" class="btn-solicitud">
+                    Ir al ORFIS <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+            
+            <!-- COMVER -->
+            <div class="solicitud-card">
+                <div class="solicitud-logo">
+                    <img src="/imagenes/transparencia/comver.png" alt="COMVER" class="logo-institucion">
+                </div>
+                <h3>COMVER</h3>
+                <p>Sistema de Consulta de Obras y Acciones Municipales de Veracruz. Consulta obras públicas municipales.</p>
+                <a href="http://sistemas.orfis.gob.mx/SIMVERP/" target="_blank" class="btn-solicitud">
+                    Consultar obras <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ESTADÍSTICAS DE SOLICITUDES ===== -->
+<section class="estadisticas-transparencia">
+    <div class="container">
+        <div class="stats-transparencia-grid">
+            <div class="stats-item">
+                <span class="stats-numero">95%</span>
+                <span class="stats-label">Solicitudes respondidas</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-numero">3 días</span>
+                <span class="stats-label">Tiempo promedio</span>
+            </div>
+            <div class="stats-item">
+                <span class="stats-numero">150</span>
+                <span class="stats-label">Solicitudes 2024</span>
+            </div>
         </div>
     </div>
 </section>
