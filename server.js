@@ -113,6 +113,22 @@ app.get('/api/noticias/destacadas', noticiasController.getDestacadas);
 app.get('/api/noticias/:id', noticiasController.getById);
 app.get('/api/noticias/destacadas-paginadas', noticiasController.getDestacadasPaginadas);
 
+
+
+// ===== REPORTES API (AGREGAR AQUÍ) =====
+const reporteController = require('./controllers/reporteController');
+
+// Crear nuevo reporte (desde el formulario)
+app.post('/api/reportes', reporteController.crearReporte);
+
+// Consultar reporte por folio
+app.get('/api/reportes/:folio', reporteController.consultarReporte);
+
+// Actualizar estado (para empleados)
+app.put('/api/reportes/:folio/estado', reporteController.actualizarEstado);
+
+
+
 // ===== HEALTH CHECK =====
 app.get('/health', (req, res) => {
     res.status(200).send('OK');
