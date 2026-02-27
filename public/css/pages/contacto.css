@@ -528,14 +528,24 @@
 }
 
 
-/* DEBUG TEMPORAL - PARA VER EL DIV DE ÉXITO */
-#reporteExito {
+
+/* ===== FORZAR VISIBILIDAD DEL DIV DE ÉXITO ===== */
+#reporteExito,
+.reporte-exito {
     display: block !important;
-    background-color: #4CAF50 !important;
-    color: white !important;
-    padding: 30px !important;
-    margin: 20px !important;
-    border: 5px solid red !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     position: relative !important;
     z-index: 9999 !important;
+    background-color: #f0f0f0 !important;
+    border: 3px solid #f05c00 !important;
+    padding: 30px !important;
+    margin: 20px auto !important;
+    max-width: 600px !important;
+    text-align: center !important;
+}
+
+#reporteExito[style*="display: none"],
+.reporte-exito[style*="display: none"] {
+    display: block !important;
 }

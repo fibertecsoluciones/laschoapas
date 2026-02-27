@@ -139,7 +139,13 @@ exitoDiv.style.zIndex = '9999';
             } else {
                 alert('Error: ' + data.message);
             }
-        } catch (error) {
+        } 
+        
+        
+        
+        
+        
+        catch (error) {
             console.error('❌ Error:', error);
             alert('Error de conexión. Intenta más tarde.');
         } finally {
