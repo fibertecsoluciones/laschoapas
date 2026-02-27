@@ -73,6 +73,7 @@ function initEnvioFormulario() {
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
+        console.log('📤 Formulario enviado');  // ← AGREGAR
         
         // Validar tipo
         if (!document.getElementById('tipoSeleccionado').value) {
@@ -112,15 +113,21 @@ function initEnvioFormulario() {
                 telefono: document.querySelector('input[name="telefono"]').value
             };
             
+            console.log('📦 Datos a enviar:', formData);  // ← AGREGAR
+            
             const response = await fetch('/api/reportes', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });
             
+            console.log('📡 Status HTTP:', response.status);  // ← AGREGAR
+            
             const data = await response.json();
+            console.log('📨 Respuesta del servidor:', data);  // ← AGREGAR
             
             if (data.success) {
+                console.log('✅ Éxito! Folio:', data.folio);  // ← AGREGAR
                 document.getElementById('folioGenerado').textContent = data.folio;
                 document.getElementById('reporteForm').style.display = 'none';
                 document.getElementById('reporteExito').style.display = 'block';
@@ -128,7 +135,7 @@ function initEnvioFormulario() {
                 alert('Error: ' + data.message);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('❌ Error:', error);
             alert('Error de conexión. Intenta más tarde.');
         } finally {
             btn.innerHTML = originalText;
