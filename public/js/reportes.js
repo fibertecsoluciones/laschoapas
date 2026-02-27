@@ -130,7 +130,12 @@ function initEnvioFormulario() {
                 console.log('✅ Éxito! Folio:', data.folio);  // ← AGREGAR
                 document.getElementById('folioGenerado').textContent = data.folio;
                 document.getElementById('reporteForm').style.display = 'none';
-                document.getElementById('reporteExito').style.display = 'block';
+                // Forzar visibilidad del div de éxito
+const exitoDiv = document.getElementById('reporteExito');
+exitoDiv.style.display = 'block';
+exitoDiv.style.visibility = 'visible';
+exitoDiv.style.opacity = '1';
+exitoDiv.style.zIndex = '9999';
             } else {
                 alert('Error: ' + data.message);
             }
