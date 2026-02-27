@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// ===== INICIALIZAR BASE DE DATOS =====
+const { initializeDatabase } = require('./database/init');
+
 // ===== RUTAS PRINCIPALES =====
 app.get('/', (req, res) => {
     try {
@@ -110,18 +113,33 @@ app.get('/api/noticias/destacadas', noticiasController.getDestacadas);
 app.get('/api/noticias/:id', noticiasController.getById);
 app.get('/api/noticias/destacadas-paginadas', noticiasController.getDestacadasPaginadas);
 
-// ===== HEALTH CHECK (OPCIONAL PERO RECOMENDADO) =====
+// ===== HEALTH CHECK =====
 app.get('/health', (req, res) => {
     res.status(200).send('OK');
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
-    console.log(`
+// ===== FUNCIÓN PARA INICIAR SERVIDOR =====
+async function startServer() {
+    try {
+        // Primero inicializar BD
+        await initializeDatabase();
+        
+        // Luego iniciar el servidor UNA SOLA VEZ
+        app.listen(PORT, () => {
+            console.log(`
     ╔══════════════════════════════════════╗
     ║   🚀 LASCHOAPAS STAR - PRODUCCIÓN   ║
     ║   📡 Puerto: ${PORT}                  ║
     ║   🌍 Modo: ${process.env.NODE_ENV || 'development'} ║
     ╚══════════════════════════════════════╝
-    `);
-});
+            `);
+        });
+        
+    } catch (error) {
+        console.error('❌ Error iniciando servidor:', error);
+        process.exit(1);
+    }
+}
+
+// Iniciar todo
+startServer();
