@@ -28,13 +28,15 @@ window.obtenerUbicacion = function() {
             document.getElementById('latitud').value = position.coords.latitude;
             document.getElementById('longitud').value = position.coords.longitude;
             
-            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
-                .then(res => res.json())
-                .then(data => {
-                    if (data.display_name) {
-                        document.getElementById('direccion').value = data.display_name.split(',')[0];
-                    }
-                });
+             // 🚫 COMENTADO TEMPORALMENTE POR ERROR CORS
+            // fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
+            //     .then(res => res.json())
+            //     .then(data => {
+            //         if (data.display_name) {
+            //             document.getElementById('direccion').value = data.display_name.split(',')[0];
+            //         }
+            //     });
+              alert('✅ Ubicación obtenida. Por favor ingresa la dirección manualmente.');
         },
         function(error) {
             alert('❌ No se pudo obtener tu ubicación');
