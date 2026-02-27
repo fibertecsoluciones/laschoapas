@@ -1,4 +1,23 @@
 -- =========================================
+-- ELIMINAR TABLAS EXISTENTES (EN ORDEN CORRECTO)
+-- =========================================
+
+-- Primero tablas con dependencias (hijas)
+DROP TABLE IF EXISTS seguimiento_reportes CASCADE;
+DROP TABLE IF EXISTS reportes CASCADE;
+DROP TABLE IF EXISTS usuarios CASCADE;
+DROP TABLE IF EXISTS configuracion CASCADE;
+DROP TABLE IF EXISTS departamentos CASCADE;
+
+-- Mensaje de confirmación
+SELECT '✅ Tablas eliminadas correctamente' as mensaje;
+
+
+
+
+
+
+-- =========================================
 -- SCRIPT DE INICIALIZACIÓN DE BASE DE DATOS
 -- ORDEN CORRECTO (sin errores de dependencias)
 -- =========================================
