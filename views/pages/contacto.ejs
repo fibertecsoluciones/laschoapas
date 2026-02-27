@@ -3,267 +3,233 @@
 <!-- ===== HEADER DE PÁGINA ===== -->
 <section class="page-header">
     <div class="container">
-        <h1>Atención Ciudadana</h1>
-        <p class="frase-destacada">⚡ Tu participación es importante. Envíanos tus dudas, reportes o sugerencias.⚡</p>
+        <h1>Reporte Ciudadano</h1>
+        <p class="frase-destacada">⚡  Reporta problemas en tu colonia⚡</p>
     </div>
 </section>
 
-<!-- ===== CONTENIDO PRINCIPAL ===== -->
-<section class="contact-page">
-    <div class="container">
-        <!-- Layout: Sidebar + Formulario -->
-        <div class="contact-wrapper">
-            <!-- Sidebar de información -->
-            <div class="contact-sidebar">
+<!-- ===== CONTENEDOR PRINCIPAL CON LA CLASE QUE FALTA ===== -->
+<section class="contacto-page">   <!-- ← AGREGAR ESTA LÍNEA -->
+
+    <!-- ===== INFORMACIÓN DE CONTACTO (TARJETAS) ===== -->
+    <section class="contacto-info-section">
+        <div class="container">
+            <div class="contacto-grid">
                 <!-- Teléfono -->
-                <div class="info-card">
-                    <div class="icon-circle">
+                <div class="contacto-card">
+                    <div class="contacto-icono">
                         <i class="fas fa-phone-alt"></i>
                     </div>
-                    <h4>Teléfono</h4>
+                    <h3>Teléfono</h3>
                     <p class="contacto-dato">(923) 123-4567</p>
                     <p class="contacto-ext">Conmutador</p>
-                    <a href="tel:9231234567" class="btn-contacto-sidebar">
+                    <a href="tel:9231234567" class="btn-contacto">
                         Llamar ahora <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
                 <!-- Correo -->
-                <div class="info-card">
-                    <div class="icon-circle">
+                <div class="contacto-card">
+                    <div class="contacto-icono">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h4>Correo Electrónico</h4>
+                    <h3>Correo Electrónico</h3>
                     <p class="contacto-dato">contacto@laschoapas.gob.mx</p>
                     <p class="contacto-ext">Respuesta en 24-48 hrs</p>
-                    <a href="mailto:contacto@laschoapas.gob.mx" class="btn-contacto-sidebar">
+                    <a href="mailto:contacto@laschoapas.gob.mx" class="btn-contacto">
                         Enviar correo <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
                 <!-- Ubicación -->
-                <div class="info-card">
-                    <div class="icon-circle">
+                <div class="contacto-card">
+                    <div class="contacto-icono">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h4>Ubicación</h4>
+                    <h3>Ubicación</h3>
                     <p class="contacto-dato">Av. Independencia #123</p>
                     <p class="contacto-ext">Zona Centro, Las Choapas, Ver.</p>
-                    <a href="https://maps.google.com/?q=Las+Choapas+Veracruz" target="_blank" class="btn-contacto-sidebar">
+                    <a href="https://maps.google.com/?q=Las+Choapas+Veracruz" target="_blank" class="btn-contacto">
                         Ver mapa <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
 
                 <!-- Horario -->
-                <div class="info-card highlighted">
-                    <div class="icon-circle">
+                <div class="contacto-card">
+                    <div class="contacto-icono">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <h4>Horario de Atención</h4>
+                    <h3>Horario de Atención</h3>
                     <p class="contacto-dato">Lun - Vie: 9:00 - 17:00</p>
                     <p class="contacto-ext">Sábados: 9:00 - 13:00</p>
-                    <a href="#ventanilla" class="btn-contacto-sidebar light">
-                        Ir a Ventanilla <i class="fas fa-arrow-down"></i>
+                    <a href="#reporteForm" class="btn-contacto">
+                        Ir a reportes <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Formulario de Ventanilla Virtual -->
-            <div class="form-container" id="ventanilla">
-                <h3 class="form-title">Ventanilla Virtual</h3>
-                <p class="form-subtitle">Reporta, propone o solicita información</p>
-                
-                <div class="ventanilla-info-compact">
-                    <i class="fas fa-info-circle"></i>
-                    <span>Completa el formulario y recibirás un <strong>folio único</strong> para dar seguimiento a tu reporte.</span>
-                    <div class="info-badge-compact">
-                        <i class="fas fa-clock"></i> Respuesta: 3-5 días hábiles
+    <!-- ===== FORMULARIO DE REPORTES CIUDADANOS ===== -->
+    <section class="reporte-principal-section" id="reporteForm">
+        <div class="container">
+            <div class="reporte-principal-container">
+                <!-- INFO SUPERIOR -->
+                <div class="reporte-info-header">
+                    <i class="fas fa-bullhorn"></i>
+                    <h2>Reporte Ciudadano</h2>
+                    <p>Reporta problemas en la vía pública para una atención más rápida</p>
+                    <div class="info-badge-container">
+                        <span class="info-badge"><i class="fas fa-clock"></i> Respuesta: 24-72 horas</span>
+                        <span class="info-badge"><i class="fas fa-map-marker-alt"></i> Ubicación obligatoria</span>
                     </div>
                 </div>
 
-                <form id="ventanillaForm" class="modern-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-user"></i> Nombre completo *</label>
-                            <input type="text" name="nombre" placeholder="Ej. Juan Pérez González" required>
+                <!-- FORMULARIO PRINCIPAL -->
+                <form id="reporteForm" class="reporte-form">
+                    <!-- TIPO DE REPORTE (selector visual) -->
+                    <div class="tipo-reporte-grid">
+                        <div class="tipo-card" data-tipo="bache">
+                            <i class="fas fa-road"></i>
+                            <span>Bache</span>
+                        </div>
+                        <div class="tipo-card" data-tipo="alumbrado">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Alumbrado</span>
+                        </div>
+                        <div class="tipo-card" data-tipo="basura">
+                            <i class="fas fa-trash"></i>
+                            <span>Basura</span>
+                        </div>
+                        <div class="tipo-card" data-tipo="fuga">
+                            <i class="fas fa-water"></i>
+                            <span>Fuga de agua</span>
+                        </div>
+                        <div class="tipo-card" data-tipo="drenaje">
+                            <i class="fas fa-poop"></i>
+                            <span>Drenaje</span>
+                        </div>
+                        <div class="tipo-card" data-tipo="vialidad">
+                            <i class="fas fa-traffic-light"></i>
+                            <span>Señalamiento</span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="tipo" id="tipoSeleccionado" required>
+
+                    <!-- UBICACIÓN -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-pin"></i> Ubicación del problema</h3>
+                        
+                        <div class="ubicacion-principal">
+                            <div class="ubicacion-input-group">
+                                <input type="text" id="direccion" name="direccion" 
+                                       placeholder="Ej. Av. Independencia #123, Centro" required>
+                                <button type="button" class="btn-ubicacion" onclick="obtenerUbicacion()">
+                                    <i class="fas fa-location-dot"></i> Usar mi ubicación
+                                </button>
+                            </div>
+                            
+                            <input type="hidden" id="latitud" name="latitud">
+                            <input type="hidden" id="longitud" name="longitud">
+                            
+                            <div class="ubicacion-detalles">
+                                <input type="text" name="colonia" placeholder="Colonia (opcional)">
+                                <input type="text" name="entre_calles" placeholder="Entre calles (opcional)">
+                            </div>
+                            
+                            <div id="mapa-preview" class="mapa-preview" style="display: none;"></div>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-envelope"></i> Correo electrónico *</label>
-                            <input type="email" name="email" placeholder="ejemplo@correo.com" required>
+                    <!-- FOTOS -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-camera"></i> Fotos del problema</h3>
+                        
+                        <div class="foto-upload-area" onclick="document.getElementById('fotos').click()">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Haz clic para subir fotos</p>
+                            <small>Máximo 5 fotos - Formatos: JPG, PNG</small>
                         </div>
-                        <div class="form-group">
-                            <label><i class="fas fa-phone"></i> Teléfono</label>
-                            <input type="tel" name="telefono" placeholder="923 123 4567">
+                        <input type="file" id="fotos" name="fotos" accept="image/*" multiple style="display: none;">
+                        
+                        <div id="vista-previa-fotos" class="fotos-preview"></div>
+                    </div>
+
+                    <!-- DESCRIPCIÓN -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-pencil-alt"></i> Descripción del problema</h3>
+                        
+                        <textarea name="descripcion" rows="5" 
+                                  placeholder="Describe el problema con el mayor detalle posible. Ej: El bache mide aproximadamente 50cm de diámetro y está en medio de la calle..." 
+                                  required></textarea>
+                    </div>
+
+                    <!-- DATOS DE CONTACTO -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-address-card"></i> Tus datos (opcional)</h3>
+                        <p class="section-note">Si proporcionas tus datos, podemos notificarte cuando se resuelva el reporte.</p>
+                        
+                        <div class="datos-grid">
+                            <input type="text" name="nombre" placeholder="Nombre completo">
+                            <input type="email" name="email" placeholder="Correo electrónico">
+                            <input type="tel" name="telefono" placeholder="Teléfono">
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-building"></i> Departamento *</label>
-                            <select name="departamento" required>
-                                <option value="">Selecciona...</option>
-                                <option value="presidencia">Presidencia</option>
-                                <option value="tesoreria">Tesorería</option>
-                                <option value="obras">Obras Públicas</option>
-                                <option value="registro-civil">Registro Civil</option>
-                                <option value="proteccion-civil">Protección Civil</option>
-                                <option value="desarrollo-social">Desarrollo Social</option>
-                                <option value="ecologia">Ecología</option>
-                                <option value="transparencia">Transparencia</option>
-                            </select>
-                        </div>
+                    <!-- PRIVACIDAD Y ENVÍO -->
+                    <div class="form-footer">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacidad" required>
+                            <span>Acepto el <a href="/aviso-privacidad" target="_blank">Aviso de Privacidad</a> y confirmo que la información proporcionada es verídica.</span>
+                        </label>
+                        
+                        <button type="submit" class="btn-enviar">  <!-- ← Cambiado -->
+    <span>Enviar reporte</span>
+    <i class="fas fa-paper-plane"></i>
+</button>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-tag"></i> Asunto *</label>
-                            <input type="text" name="asunto" placeholder="Breve descripción del asunto" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label><i class="fas fa-pencil-alt"></i> Descripción detallada *</label>
-                            <textarea name="descripcion" rows="4" placeholder="Explica tu solicitud, reporte o propuesta con el mayor detalle posible" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="privacidad" required>
-                                <span>Acepto el <a href="/aviso-privacidad" target="_blank">Aviso de Privacidad</a></span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-enviar">
-                        <span>Generar folio</span>
-                        <i class="fas fa-file-invoice"></i>
-                    </button>
                 </form>
 
-                <!-- Resultado del folio -->
-                <div id="folioResultado" class="folio-resultado" style="display: none;">
-                    <div class="folio-icono">
+                <!-- PANTALLA DE ÉXITO -->
+                <div id="reporteExito" class="reporte-exito" style="display: none;">
+                    <div class="exito-icono">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h4>¡Reporte enviado!</h4>
-                    <p>Tu folio es:</p>
-                    <div class="folio-numero" id="folioGenerado">PRE-2024-02-0001</div>
-                    <p class="folio-nota">Guarda este folio para dar seguimiento</p>
-                    <button class="btn-nuevo-reporte" onclick="resetVentanilla()">
-                        <i class="fas fa-plus"></i> Nuevo reporte
+                    <h2>¡Reporte enviado con éxito!</h2>
+                    <p>Tu folio de seguimiento es:</p>
+                    <div class="exito-folio" id="folioGenerado">REP-2024-02-0001</div>
+                    <div class="exito-info">
+                        <p><i class="fas fa-clock"></i> Tiempo estimado de atención: <strong>24-72 horas</strong></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Recibirás notificaciones si proporcionaste tu correo.</p>
+                    </div>
+                    <button class="btn-nuevo-reporte" onclick="resetFormulario()">
+                        <i class="fas fa-plus"></i> Reportar otro problema
                     </button>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== MAPA ===== -->
-<section class="mapa-section">
-    <div class="container">
-        <div class="map-responsive">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.7076165464051!2d-94.09069137070433!3d17.909239931211083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ebdddfe1489f1b%3A0x79a84625680eb898!2sPalacio%20Municipal!5e1!3m2!1ses!2smx!4v1772135822701!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+    <!-- ===== MAPA ===== -->
+    <section class="mapa-section">
+        <div class="container">
+            <div class="map-responsive">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.7076165464051!2d-94.09069137070433!3d17.909239931211083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ebdddfe1489f1b%3A0x79a84625680eb898!2sPalacio%20Municipal!5e1!3m2!1ses!2smx!4v1772135822701!5m2!1ses!2smx" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    function resetVentanilla() {
-        // Mostrar el formulario nuevamente
-        document.getElementById('ventanillaForm').reset();
-        document.getElementById('ventanillaForm').style.display = 'block';
-        document.getElementById('folioResultado').style.display = 'none';
-        
-        // Opcional: Hacer scroll hacia el formulario
-        document.getElementById('ventanilla').scrollIntoView({ behavior: 'smooth' });
-    }
+</section>  <!-- ← CERRAR LA CLASE CONTENEDORA -->
 
-    document.getElementById('ventanillaForm')?.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Obtener valores de los campos
-        const nombre = document.querySelector('input[name="nombre"]').value.trim();
-        const email = document.querySelector('input[name="email"]').value.trim();
-        const departamento = document.querySelector('select[name="departamento"]').value;
-        const asunto = document.querySelector('input[name="asunto"]').value.trim();
-        const descripcion = document.querySelector('textarea[name="descripcion"]').value.trim();
-        const privacidad = document.querySelector('input[name="privacidad"]').checked;
-        
-        // Validar campos obligatorios
-        if (!nombre || !email || !departamento || !asunto || !descripcion || !privacidad) {
-            alert('⚠️ Por favor completa todos los campos obligatorios y acepta el aviso de privacidad.');
-            
-            // Resaltar campos vacíos (opcional)
-            if (!nombre) document.querySelector('input[name="nombre"]').style.borderColor = '#ff0000';
-            if (!email) document.querySelector('input[name="email"]').style.borderColor = '#ff0000';
-            if (!departamento) document.querySelector('select[name="departamento"]').style.borderColor = '#ff0000';
-            if (!asunto) document.querySelector('input[name="asunto"]').style.borderColor = '#ff0000';
-            if (!descripcion) document.querySelector('textarea[name="descripcion"]').style.borderColor = '#ff0000';
-            
-            return;
-        }
-        
-        // Restaurar colores de borde
-        document.querySelectorAll('input, select, textarea').forEach(el => {
-            el.style.borderColor = '';
-        });
-        
-        // Deshabilitar el botón mientras "envía"
-        const btn = e.target.querySelector('button[type="submit"]') || e.target;
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<span>Enviando...</span> <i class="fas fa-spinner fa-spin"></i>';
-        btn.disabled = true;
-        
-        // Simular envío con timeout (para que se vea realista)
-        setTimeout(() => {
-            // Generar folio
-            const fecha = new Date();
-            const año = fecha.getFullYear();
-            const mes = String(fecha.getMonth() + 1).padStart(2, '0');
-            const consecutivo = String(Math.floor(Math.random() * 9000) + 1000);
-            
-            const codigos = {
-                'presidencia': 'PRE', 'tesoreria': 'TES', 'obras': 'OBR',
-                'registro-civil': 'RCI', 'proteccion-civil': 'PCV',
-                'desarrollo-social': 'DSO', 'ecologia': 'ECO', 'transparencia': 'TRA'
-            };
-            
-            const codigo = codigos[departamento] || 'GEN';
-            const folio = `${codigo}-${año}-${mes}-${consecutivo}`;
-            
-            // Mostrar resultado
-            document.getElementById('folioGenerado').textContent = folio;
-            document.getElementById('ventanillaForm').style.display = 'none';
-            document.getElementById('folioResultado').style.display = 'block';
-            
-            // Restaurar botón (por si acaso)
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-        }, 1500); // 1.5 segundos de simulación
-    });
-
-    // Limpiar bordes rojos cuando el usuario empieza a escribir
-    document.querySelectorAll('input, select, textarea').forEach(el => {
-        el.addEventListener('input', function() {
-            this.style.borderColor = '';
-        });
-        el.addEventListener('change', function() {
-            this.style.borderColor = '';
-        });
-    });
-</script>
+<!-- Scripts -->
+<script src="/js/main.js"></script>
+<script src="/js/reportes.js"></script>
 
 <%- include('../layout/footer') %>
