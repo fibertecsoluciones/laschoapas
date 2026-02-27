@@ -1,7 +1,7 @@
 // database/init.js
 const fs = require('fs');
 const path = require('path');
-const pool = require('./config/db');  // ✅ Ruta correcta (dos puntos)
+const pool = require('../config/db');  // ✅ Ruta correcta (dos puntos)
 
 async function initializeDatabase() {
     try {
