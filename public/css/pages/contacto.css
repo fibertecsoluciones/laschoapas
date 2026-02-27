@@ -526,3 +526,16 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* DEBUG TEMPORAL - PARA VER EL DIV DE ÉXITO */
+#reporteExito {
+    display: block !important;
+    background-color: #4CAF50 !important;
+    color: white !important;
+    padding: 30px !important;
+    margin: 20px !important;
+    border: 5px solid red !important;
+    position: relative !important;
+    z-index: 9999 !important;
+}
