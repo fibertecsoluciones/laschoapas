@@ -1,7 +1,7 @@
 // database/init.js
 const fs = require('fs');
 const path = require('path');
-const pool = require('../config/db');
+const pool = require('/config/db');
 
 /**
  * Inicializa la base de datos ejecutando el script SQL
