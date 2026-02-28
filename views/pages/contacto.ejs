@@ -4,232 +4,237 @@
 <section class="page-header">
     <div class="container">
         <h1>Reporte Ciudadano</h1>
-        <p class="frase-destacada">⚡  Reporta problemas en tu colonia⚡</p>
+        <p class="frase-destacada">⚡ Reporta problemas en tu colonia ⚡</p>
     </div>
 </section>
 
-<!-- ===== CONTENEDOR PRINCIPAL CON LA CLASE QUE FALTA ===== -->
-<section class="contacto-page">   <!-- ← AGREGAR ESTA LÍNEA -->
+<!-- ===== CONTENEDOR PRINCIPAL ===== -->
+<section class="contacto-page">
 
-    <!-- ===== INFORMACIÓN DE CONTACTO (TARJETAS) ===== -->
-    <section class="contacto-info-section">
-        <div class="container">
-            <div class="contacto-grid">
-                <!-- Teléfono -->
-                <div class="contacto-card">
-                    <div class="contacto-icono">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
+    <!-- ===== LAYOUT DE DOS COLUMNAS ===== -->
+    <div class="contacto-layout">
+        
+        <!-- ===== COLUMNA IZQUIERDA - TARJETAS VERTICALES ===== -->
+        <aside class="contacto-sidebar">
+            <h2 class="sidebar-title">Contacto</h2>
+            
+            <!-- Teléfono -->
+            <div class="contacto-card-vertical">
+                <div class="contacto-icono-vertical">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contacto-info-vertical">
                     <h3>Teléfono</h3>
                     <p class="contacto-dato">(923) 123-4567</p>
                     <p class="contacto-ext">Conmutador</p>
-                    <a href="tel:9231234567" class="btn-contacto">
-                        Llamar ahora <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="tel:9231234567" class="btn-contacto-vertical">Llamar ahora</a>
                 </div>
+            </div>
 
-                <!-- Correo -->
-                <div class="contacto-card">
-                    <div class="contacto-icono">
-                        <i class="fas fa-envelope"></i>
-                    </div>
+            <!-- Correo -->
+            <div class="contacto-card-vertical">
+                <div class="contacto-icono-vertical">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contacto-info-vertical">
                     <h3>Correo Electrónico</h3>
                     <p class="contacto-dato">contacto@laschoapas.gob.mx</p>
                     <p class="contacto-ext">Respuesta en 24-48 hrs</p>
-                    <a href="mailto:contacto@laschoapas.gob.mx" class="btn-contacto">
-                        Enviar correo <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="mailto:contacto@laschoapas.gob.mx" class="btn-contacto-vertical">Enviar correo</a>
                 </div>
+            </div>
 
-                <!-- Ubicación -->
-                <div class="contacto-card">
-                    <div class="contacto-icono">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
+            <!-- Ubicación -->
+            <div class="contacto-card-vertical">
+                <div class="contacto-icono-vertical">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contacto-info-vertical">
                     <h3>Ubicación</h3>
                     <p class="contacto-dato">Av. Independencia #123</p>
                     <p class="contacto-ext">Zona Centro, Las Choapas, Ver.</p>
-                    <a href="https://maps.google.com/?q=Las+Choapas+Veracruz" target="_blank" class="btn-contacto">
-                        Ver mapa <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <a href="https://maps.google.com/?q=Las+Choapas+Veracruz" target="_blank" class="btn-contacto-vertical">Ver mapa</a>
                 </div>
+            </div>
 
-                <!-- Horario -->
-                <div class="contacto-card">
-                    <div class="contacto-icono">
-                        <i class="fas fa-clock"></i>
-                    </div>
+            <!-- Horario -->
+            <div class="contacto-card-vertical destacado">
+                <div class="contacto-icono-vertical">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="contacto-info-vertical">
                     <h3>Horario de Atención</h3>
                     <p class="contacto-dato">Lun - Vie: 9:00 - 17:00</p>
                     <p class="contacto-ext">Sábados: 9:00 - 13:00</p>
-                    <a href="#reporteForm" class="btn-contacto">
-                        Ir a reportes <i class="fas fa-arrow-down"></i>
-                    </a>
+                    <a href="#reporteForm" class="btn-contacto-vertical">Ir a reportes</a>
                 </div>
             </div>
+        </aside>
+
+        <!-- ===== COLUMNA DERECHA - FORMULARIO ===== -->
+        <main class="contacto-main">
+            <!-- ===== FORMULARIO DE REPORTES CIUDADANOS (TU CÓDIGO EXACTO) ===== -->
+            <section class="reporte-principal-section" id="reporteFormSection">
+                <div class="container">
+                    <div class="reporte-principal-container">
+                        <!-- INFO SUPERIOR -->
+                        <div class="reporte-info-header">
+                            <i class="fas fa-bullhorn"></i>
+                            <h2>Reporte Ciudadano</h2>
+                            <p>Reporta problemas en la vía pública para una atención más rápida</p>
+                            <div class="info-badge-container">
+                                <span class="info-badge"><i class="fas fa-clock"></i> Respuesta: 24-72 horas</span>
+                                <span class="info-badge"><i class="fas fa-map-marker-alt"></i> Ubicación obligatoria</span>
+                            </div>
+                        </div>
+
+                        <!-- FORMULARIO PRINCIPAL (TU CÓDIGO EXACTO) -->
+                       <form id="reporteForm" class="reporte-form">
+    <!-- TIPO DE REPORTE (selector visual) -->
+    <div class="tipo-reporte-grid">
+        <div class="tipo-card" data-tipo="bache">
+            <i class="fas fa-road"></i>
+            <span>Bache</span>
         </div>
-    </section>
+        <div class="tipo-card" data-tipo="alumbrado">
+            <i class="fas fa-lightbulb"></i>
+            <span>Alumbrado</span>
+        </div>
+        <div class="tipo-card" data-tipo="basura">
+            <i class="fas fa-trash"></i>
+            <span>Basura</span>
+        </div>
+        <div class="tipo-card" data-tipo="fuga">
+            <i class="fas fa-water"></i>
+            <span>Fuga de agua</span>
+        </div>
+        <div class="tipo-card" data-tipo="drenaje">
+            <i class="fas fa-poop"></i>
+            <span>Drenaje</span>
+        </div>
+        <div class="tipo-card" data-tipo="vialidad">
+            <i class="fas fa-traffic-light"></i>
+            <span>Señalamiento</span>
+        </div>
+    </div>
+    <input type="hidden" name="tipo" id="tipoSeleccionado" required>
 
-    <!-- ===== FORMULARIO DE REPORTES CIUDADANOS ===== -->
-    <section class="reporte-principal-section" id="reporteForm">
-        <div class="container">
-            <div class="reporte-principal-container">
-                <!-- INFO SUPERIOR -->
-                <div class="reporte-info-header">
-                    <i class="fas fa-bullhorn"></i>
-                    <h2>Reporte Ciudadano</h2>
-                    <p>Reporta problemas en la vía pública para una atención más rápida</p>
-                    <div class="info-badge-container">
-                        <span class="info-badge"><i class="fas fa-clock"></i> Respuesta: 24-72 horas</span>
-                        <span class="info-badge"><i class="fas fa-map-marker-alt"></i> Ubicación obligatoria</span>
+    <!-- 🔴 SELECT OCULTO PARA EL JS -->
+    <select id="tipoReporte" style="display: none;">
+        <option value="bache">Bache</option>
+        <option value="alumbrado">Alumbrado</option>
+        <option value="basura">Basura</option>
+        <option value="fuga">Fuga de agua</option>
+        <option value="drenaje">Drenaje</option>
+        <option value="vialidad">Señalamiento</option>
+    </select>
+
+    <!-- UBICACIÓN -->
+    <div class="form-section">
+        <h3><i class="fas fa-map-pin"></i> Ubicación del problema</h3>
+        
+        <div class="ubicacion-principal">
+            <div class="ubicacion-input-group">
+                <input type="text" id="direccion" name="direccion" 
+                       placeholder="Ej. Av. Independencia #123, Centro" required>
+                <button type="button" class="btn-ubicacion" onclick="obtenerUbicacion()">
+                    <i class="fas fa-location-dot"></i> Usar mi ubicación
+                </button>
+            </div>
+            
+            <input type="hidden" id="latitud" name="latitud">
+            <input type="hidden" id="longitud" name="longitud">
+            
+            <div class="ubicacion-detalles">
+                <input type="text" name="colonia" placeholder="Colonia (opcional)">
+                <input type="text" name="entre_calles" placeholder="Entre calles (opcional)">
+            </div>
+            
+            <div id="mapa-preview" class="mapa-preview" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- FOTOS -->
+    <div class="form-section">
+        <h3><i class="fas fa-camera"></i> Fotos del problema</h3>
+        
+        <div class="foto-upload-area" onclick="document.getElementById('fotos').click()">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Haz clic para subir fotos</p>
+            <small>Máximo 5 fotos - Formatos: JPG, PNG</small>
+        </div>
+        <input type="file" id="fotos" name="fotos" accept="image/*" multiple style="display: none;">
+        
+        <div id="vista-previa-fotos" class="fotos-preview"></div>
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div class="form-section">
+        <h3><i class="fas fa-pencil-alt"></i> Descripción del problema</h3>
+        
+        <textarea name="descripcion" rows="5" 
+                  placeholder="Describe el problema con el mayor detalle posible. Ej: El bache mide aproximadamente 50cm de diámetro y está en medio de la calle..." 
+                  required></textarea>
+    </div>
+
+    <!-- DATOS DE CONTACTO -->
+    <div class="form-section">
+        <h3><i class="fas fa-address-card"></i> Tus datos (opcional)</h3>
+        <p class="section-note">Si proporcionas tus datos, podemos notificarte cuando se resuelva el reporte.</p>
+        
+        <div class="datos-grid">
+            <input type="text" name="nombre" placeholder="Nombre completo">
+            <input type="email" name="email" placeholder="Correo electrónico">
+            <input type="tel" name="telefono" placeholder="Teléfono">
+        </div>
+    </div>
+
+    <!-- PRIVACIDAD Y ENVÍO -->
+    <div class="form-footer">
+        <label class="checkbox-label">
+            <input type="checkbox" name="privacidad" required>
+            <span>Acepto el <a href="/aviso-privacidad" target="_blank">Aviso de Privacidad</a> y confirmo que la información proporcionada es verídica.</span>
+        </label>
+        
+        <button type="submit" class="btn-enviar">
+            <span>Enviar reporte</span>
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</form>
                     </div>
                 </div>
+            </section>
+        </main>
+    </div>
 
-                <!-- FORMULARIO PRINCIPAL -->
-                <form id="reporteForm" class="reporte-form">
-                    <!-- TIPO DE REPORTE (selector visual) -->
-                    <div class="tipo-reporte-grid">
-                        <div class="tipo-card" data-tipo="bache">
-                            <i class="fas fa-road"></i>
-                            <span>Bache</span>
-                        </div>
-                        <div class="tipo-card" data-tipo="alumbrado">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Alumbrado</span>
-                        </div>
-                        <div class="tipo-card" data-tipo="basura">
-                            <i class="fas fa-trash"></i>
-                            <span>Basura</span>
-                        </div>
-                        <div class="tipo-card" data-tipo="fuga">
-                            <i class="fas fa-water"></i>
-                            <span>Fuga de agua</span>
-                        </div>
-                        <div class="tipo-card" data-tipo="drenaje">
-                            <i class="fas fa-poop"></i>
-                            <span>Drenaje</span>
-                        </div>
-                        <div class="tipo-card" data-tipo="vialidad">
-                            <i class="fas fa-traffic-light"></i>
-                            <span>Señalamiento</span>
-                        </div>
-                    </div>
-                    <input type="hidden" name="tipo" id="tipoSeleccionado" required>
-
-                    <!-- UBICACIÓN -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-map-pin"></i> Ubicación del problema</h3>
-                        
-                        <div class="ubicacion-principal">
-                            <div class="ubicacion-input-group">
-                                <input type="text" id="direccion" name="direccion" 
-                                       placeholder="Ej. Av. Independencia #123, Centro" required>
-                                <button type="button" class="btn-ubicacion" onclick="obtenerUbicacion()">
-                                    <i class="fas fa-location-dot"></i> Usar mi ubicación
-                                </button>
-                            </div>
-                            
-                            <input type="hidden" id="latitud" name="latitud">
-                            <input type="hidden" id="longitud" name="longitud">
-                            
-                            <div class="ubicacion-detalles">
-                                <input type="text" name="colonia" placeholder="Colonia (opcional)">
-                                <input type="text" name="entre_calles" placeholder="Entre calles (opcional)">
-                            </div>
-                            
-                            <div id="mapa-preview" class="mapa-preview" style="display: none;"></div>
-                        </div>
-                    </div>
-
-                    <!-- FOTOS -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-camera"></i> Fotos del problema</h3>
-                        
-                        <div class="foto-upload-area" onclick="document.getElementById('fotos').click()">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Haz clic para subir fotos</p>
-                            <small>Máximo 5 fotos - Formatos: JPG, PNG</small>
-                        </div>
-                        <input type="file" id="fotos" name="fotos" accept="image/*" multiple style="display: none;">
-                        
-                        <div id="vista-previa-fotos" class="fotos-preview"></div>
-                    </div>
-
-                    <!-- DESCRIPCIÓN -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-pencil-alt"></i> Descripción del problema</h3>
-                        
-                        <textarea name="descripcion" rows="5" 
-                                  placeholder="Describe el problema con el mayor detalle posible. Ej: El bache mide aproximadamente 50cm de diámetro y está en medio de la calle..." 
-                                  required></textarea>
-                    </div>
-
-                    <!-- DATOS DE CONTACTO -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-address-card"></i> Tus datos (opcional)</h3>
-                        <p class="section-note">Si proporcionas tus datos, podemos notificarte cuando se resuelva el reporte.</p>
-                        
-                        <div class="datos-grid">
-                            <input type="text" name="nombre" placeholder="Nombre completo">
-                            <input type="email" name="email" placeholder="Correo electrónico">
-                            <input type="tel" name="telefono" placeholder="Teléfono">
-                        </div>
-                    </div>
-
-                    <!-- PRIVACIDAD Y ENVÍO -->
-                    <div class="form-footer">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="privacidad" required>
-                            <span>Acepto el <a href="/aviso-privacidad" target="_blank">Aviso de Privacidad</a> y confirmo que la información proporcionada es verídica.</span>
-                        </label>
-                        
-                        <button type="submit" class="btn-enviar">  <!-- ← Cambiado -->
-    <span>Enviar reporte</span>
-    <i class="fas fa-paper-plane"></i>
-</button>
-                    </div>
-                </form>
-
-                <!-- PANTALLA DE ÉXITO -->
-                <div id="reporteExito" class="reporte-exito" style="display: none;">
-                    <div class="exito-icono">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h2>¡Reporte enviado con éxito!</h2>
-                    <p>Tu folio de seguimiento es:</p>
-                    <div class="exito-folio" id="folioGenerado">REP-2024-02-0001</div>
-                    <div class="exito-info">
-                        <p><i class="fas fa-clock"></i> Tiempo estimado de atención: <strong>24-72 horas</strong></p>
-                        <p><i class="fas fa-map-marker-alt"></i> Recibirás notificaciones si proporcionaste tu correo.</p>
-                    </div>
-                    <button class="btn-nuevo-reporte" onclick="resetFormulario()">
-                        <i class="fas fa-plus"></i> Reportar otro problema
-                    </button>
-                </div>
+    <!-- ===== POPUP DE ÉXITO ===== -->
+    <div id="popupExito" class="popup-modal" style="display: none;">
+        <div class="popup-contenido">
+            <div class="popup-header">
+                <i class="fas fa-check-circle popup-icono"></i>
+            </div>
+            <h2 class="popup-titulo">¡Reporte enviado con éxito!</h2>
+            <p class="popup-texto">Tu folio de seguimiento es:</p>
+            <div class="popup-folio" id="folioGenerado">REP-2024-02-0001</div>
+            <div class="popup-info">
+                <p><i class="fas fa-clock"></i> Tiempo estimado: <strong>24-72 horas</strong></p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- ===== MAPA ===== -->
     <section class="mapa-section">
         <div class="container">
             <div class="map-responsive">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.7076165464051!2d-94.09069137070433!3d17.909239931211083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ebdddfe1489f1b%3A0x79a84625680eb898!2sPalacio%20Municipal!5e1!3m2!1ses!2smx!4v1772135822701!5m2!1ses!2smx" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d472.7076165464051!2d-94.09069137070433!3d17.909239931211083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ebdddfe1489f1b%3A0x79a84625680eb898!2sPalacio%20Municipal!5e1!3m2!1ses!2smx!4v1772135822701!5m2!1ses!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-</section>  <!-- ← CERRAR LA CLASE CONTENEDORA -->
+</section>
 
 <!-- Scripts -->
 <script src="/js/main.js"></script>
-<script src="/js/reportes.js"></script>
-
+<script src="/js/contacto.js"></script>
 <%- include('../layout/footer') %>
