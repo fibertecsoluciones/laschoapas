@@ -129,29 +129,66 @@ window.obtenerUbicacion = function() {
     );
 };
 
-// ===== MOSTRAR MAPA CON LA UBICACIÓN =====
+// ===== MOSTRAR MAPA SATELITAL CON ESRI =====
 function mostrarMapa(lat, lng) {
     const mapaDiv = document.getElementById('mapa-preview');
     mapaDiv.style.display = 'block';
+    mapaDiv.style.padding = '0';
+    mapaDiv.style.background = '#f0f0f0';
+    mapaDiv.style.borderRadius = '12px';
+    mapaDiv.style.overflow = 'hidden';
+    mapaDiv.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
     
-    // Crear iframe con OpenStreetMap
-    const mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${lng-0.01}%2C${lat-0.01}%2C${lng+0.01}%2C${lat+0.01}&layer=mapnik&marker=${lat}%2C${lng}`;
+    // Crear contenedor para el mapa
+    mapaDiv.innerHTML = '<div id="leaflet-map" style="height: 300px; width: 100%;"></div>';
     
-    mapaDiv.innerHTML = `
-        <iframe 
-            width="100%" 
-            height="250" 
-            frameborder="0" 
-            scrolling="no" 
-            marginheight="0" 
-            marginwidth="0" 
-            src="${mapUrl}"
-            style="border: 1px solid #ddd; border-radius: 8px;">
-        </iframe>
-        <p style="margin-top: 5px; font-size: 0.8rem; color: #666;">
-            <i class="fas fa-map-marker-alt"></i> Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)}
-        </p>
-    `;
+    // Inicializar mapa después de que el DOM se actualice
+    setTimeout(() => {
+        const map = L.map('leaflet-map').setView([lat, lng], 18);
+        
+        // 🛰️ CAPA SATELITAL DE ESRI (World Imagery)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Opcional: Agregar capa de etiquetas (nombres de calles, ciudades)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            maxZoom: 19,
+            opacity: 0.5 // Capa semitransparente para que se vea la imagen satelital
+        }).addTo(map);
+        
+        // Marcador personalizado con ícono naranja
+        const markerIcon = L.divIcon({
+            className: 'custom-marker',
+            html: '<i class="fas fa-map-marker-alt" style="font-size: 32px; color: #f05c00; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+        
+        const marker = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
+        marker.bindPopup(`
+            <div style="text-align: center; padding: 5px;">
+                <strong style="color: #f05c00;">📍 Ubicación reportada</strong><br>
+                <small>Lat: ${lat.toFixed(6)}<br>Lng: ${lng.toFixed(6)}</small>
+            </div>
+        `).openPopup();
+        
+        // Agregar enlace para abrir en Google Maps
+        const linkDiv = document.createElement('div');
+        linkDiv.style.marginTop = '10px';
+        linkDiv.style.textAlign = 'right';
+        linkDiv.innerHTML = `
+            <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank" 
+               style="color: #f05c00; text-decoration: none; font-size: 0.9rem;">
+                <i class="fas fa-external-link-alt"></i> Ver en Google Maps
+            </a>
+        `;
+        mapaDiv.appendChild(linkDiv);
+        
+    }, 100);
 }
 
 // ===== OBTENER DIRECCIÓN APROXIMADA (OPCIONAL) =====
