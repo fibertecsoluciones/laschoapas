@@ -918,3 +918,51 @@
         font-size: 0.9rem;
     }
 }
+
+
+/* ===== CORRECCIÓN DE ALINEACIÓN MÓVIL ===== */
+
+/* Cuando el layout está en una sola columna (móvil) */
+@media screen and (max-width: 768px) {
+    .contacto-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    /* Tarjetas y formulario al mismo nivel */
+    .contacto-sidebar,
+    .contacto-main {
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Eliminar márgenes extras */
+    .contacto-sidebar {
+        margin-bottom: 0; /* Eliminar margen inferior que separaba */
+    }
+    
+    /* Asegurar que el formulario comience justo después de las tarjetas */
+    .contacto-main {
+        margin-top: 0;
+    }
+    
+    /* Centrar el contenido del formulario */
+    .contacto-main .reporte-principal-container {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+}
+
+/* Ajuste fino para móviles pequeños */
+@media screen and (max-width: 480px) {
+    .contacto-layout {
+        gap: 1rem;
+    }
+    
+    .contacto-main .reporte-principal-container {
+        padding: 1rem;
+    }
+}
