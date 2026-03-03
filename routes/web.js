@@ -1,30 +1,52 @@
 const express = require('express');
 const router = express.Router();
-const homeController = require('../controllers/homeController'); // si lo creas
-const noticiasController = require('../controllers/noticiasController');
-const reporteController = require('../controllers/reporteController'); // 🆕
 
-// Página principal
-router.get('/', homeController.index); // o la función que uses
+// Ruta principal
+router.get('/', (req, res) => {
+    res.render('index', { 
+        titulo: 'Inicio',
+        currentPage: 'inicio'
+    });
+});
 
-// Páginas estáticas
+// Ruta de gobierno
 router.get('/gobierno', (req, res) => {
-    res.render('pages/gobierno', { titulo: 'Gobierno', currentPage: 'gobierno' });
+    res.render('pages/gobierno', { 
+        titulo: 'Gobierno',
+        currentPage: 'gobierno'
+    });
 });
 
+// Ruta de trámites
 router.get('/tramites', (req, res) => {
-    res.render('pages/tramites', { titulo: 'Trámites', currentPage: 'tramites' });
+    res.render('pages/tramites', { 
+        titulo: 'Trámites',
+        currentPage: 'tramites'
+    });
 });
 
+// Ruta de contacto
 router.get('/contacto', (req, res) => {
-    res.render('pages/contacto', { titulo: 'Contacto', currentPage: 'contacto' });
+    res.render('pages/contacto', { 
+        titulo: 'Contacto',
+        currentPage: 'contacto'
+    });
 });
 
-// Noticias web
+
+// ===== NUEVAS RUTAS DE NOTICIAS =====
+// Importar el controlador de noticias
+const noticiasController = require('../controllers/noticiasController');
+
+// Ruta para ver todas las noticias
 router.get('/noticias', noticiasController.viewAll);
+
+// Ruta para ver una noticia individual (con ID)
 router.get('/noticias/:id', noticiasController.viewSingle);
 
-// 🆕 Ruta para ver tickets (admin)
-router.get('/admin/reportes', reporteController.verTodos);
+
 
 module.exports = router;
+
+
+

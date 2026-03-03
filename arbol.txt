@@ -1,0 +1,126 @@
+Listado de rutas de carpetas para el volumen Windows
+El n�mero de serie del volumen es 76CD-3800
+C:.
+|   .env
+|   .gitignore
+|   arbol.txt
+|   estructura.txt
+|   package-lock.json
+|   package.json
+|   server.js
+|   
++---.vscode
+|       settings.json
+|       
++---config
+|       db.js
+|       
++---controllers
+|       noticiasController.js
+|       reporteController.js
+|       
++---data
+|       noticias.json
+|       
++---database
+|       init.js
+|       init.sql
+|       
++---public
+|   +---css
+|   |   |   main.css
+|   |   |   reset.css
+|   |   |   variables.css
+|   |   |   
+|   |   +---components
+|   |   |       buttons.css
+|   |   |       cards.css
+|   |   |       footer.css
+|   |   |       forms.css
+|   |   |       header.css
+|   |   |       
+|   |   +---pages
+|   |   |       contacto.css
+|   |   |       gobierno.css
+|   |   |       tramites.css
+|   |   |       transparencia.css
+|   |   |       
+|   |   +---sections
+|   |   |       contacto.css
+|   |   |       convocatorias.css
+|   |   |       estadisticas.css
+|   |   |       hero.css
+|   |   |       noticias.css
+|   |   |       servicios.css
+|   |   |       transparencia.css
+|   |   |       
+|   |   \---utils
+|   |           animations.css
+|   |           responsive.css
+|   |           
+|   +---docs
+|   +---imagenes
+|   |   |   footer.png
+|   |   |   logo.jpg
+|   |   |   LOGO.png
+|   |   |   palacio.png
+|   |   |   palacio2.jpg
+|   |   |   uribe.jpg
+|   |   |   
+|   |   +---gobierno
+|   |   |       Antonio Dosal Herrera.jpg
+|   |   |       Blanca Margarita Colorado Nava.jpg
+|   |   |       C. Aranza Ocharan Echeverria.jpg
+|   |   |       C. Pedro Velasco Mart�nez.jpeg
+|   |   |       C. Veronica Ramos Montiel.jpg
+|   |   |       C. Victor Manuel Fr�as Prieto.jpg
+|   |   |       C. Yessenia Silva Acosta.jpg
+|   |   |       Magdalena Perez Garcia.jpg
+|   |   |       Presidente.jpeg
+|   |   |       
+|   |   +---noticias
+|   |   |       camion.jpg
+|   |   |       carretera.jpg
+|   |   |       dron.jpg
+|   |   |       dron2.jpg
+|   |   |       ganadero.jpg
+|   |   |       noticia.jpg
+|   |   |       reunoin.jpg
+|   |   |       secretario.jpg
+|   |   |       tractor.jpg
+|   |   |       
+|   |   \---transparencia
+|   |           comver.png
+|   |           ivai.png
+|   |           orfis.png
+|   |           pnt.png
+|   |           
+|   \---js
+|           contacto.js
+|           main.js
+|           
++---routes
+|   |   api.js
+|   |   web.js
+|   |   
+|   \---api
+|           noticias.js
+|           reportes.js
+|           
+\---views
+    |   index.ejs
+    |   noticia.ejs
+    |   
+    +---admin
+    |       reportes.ejs
+    |       
+    +---layout
+    |       footer.ejs
+    |       header.ejs
+    |       
+    \---pages
+            contacto.ejs
+            gobierno.ejs
+            tramites.ejs
+            transparencia.ejs
+            
