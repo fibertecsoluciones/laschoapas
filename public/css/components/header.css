@@ -108,7 +108,7 @@
     cursor: pointer;
     padding: 0.5rem;
     transition: all var(--transition-normal);
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .menu-toggle:hover {
