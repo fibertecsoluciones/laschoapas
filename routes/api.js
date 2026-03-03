@@ -1,10 +1,9 @@
+// routes/api.js
 const express = require('express');
 const router = express.Router();
-const noticiasController = require('../controllers/noticiasController');
 
-// Rutas API para noticias
-router.get('/noticias', noticiasController.getAll);
-router.get('/noticias/destacadas', noticiasController.getDestacadas);
-router.get('/noticias/:id', noticiasController.getById);
+// Importar todas las APIs
+router.use('/noticias', require('./api/noticias'));
+router.use('/reportes', require('./api/reportes'));
 
 module.exports = router;

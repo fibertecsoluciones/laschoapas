@@ -2,20 +2,13 @@
 const pool = require('../config/db');
 
 const reporteController = {
-    // Guardar un nuevo reporte ciudadano
-    async crearReporte(req, res) {
+    // ===== 1. CREAR REPORTE (API) =====
+    crearReporte: async (req, res) => {
         try {
             const {
-                tipo,
-                direccion,
-                latitud,
-                longitud,
-                colonia,
-                entre_calles,
-                descripcion,
-                nombre,
-                email,
-                telefono
+                tipo, direccion, latitud, longitud,
+                colonia, entre_calles, descripcion,
+                nombre, email, telefono
             } = req.body;
 
             // Validar campos obligatorios
@@ -26,13 +19,12 @@ const reporteController = {
                 });
             }
 
-            // Generar folio único
+            // Generar folio único (REP-2024-03-0001)
             const fecha = new Date();
             const año = fecha.getFullYear();
             const mes = String(fecha.getMonth() + 1).padStart(2, '0');
-            
-            // Obtener el último consecutivo del día
             const hoy = fecha.toISOString().split('T')[0];
+            
             const countResult = await pool.query(
                 `SELECT COUNT(*) FROM reportes WHERE fecha_reporte::date = $1`,
                 [hoy]
@@ -41,33 +33,26 @@ const reporteController = {
             const consecutivo = parseInt(countResult.rows[0].count) + 1;
             const folio = `REP-${año}-${mes}-${String(consecutivo).padStart(4, '0')}`;
 
-            // Asignar departamento según tipo de reporte
+            // Asignar departamento según tipo
             const departamentoMap = {
-                'bache': 3,        // Obras Públicas
-                'alumbrado': 3,     // Obras Públicas
-                'basura': 6,        // Desarrollo Social
-                'fuga': 11,         // COMAPA/Salud
-                'drenaje': 11,       // COMAPA/Salud
-                'vialidad': 3        // Obras Públicas
+                'bache': 3, 'alumbrado': 3, 'basura': 6,
+                'fuga': 11, 'drenaje': 11, 'vialidad': 3
             };
-            
-            const departamento_id = departamentoMap[tipo] || 3; // Por defecto Obras
+            const departamento_id = departamentoMap[tipo] || 3;
 
-            // Insertar en la base de datos
+            // Insertar en BD
             const result = await pool.query(
                 `INSERT INTO reportes (
                     folio, tipo, direccion, latitud, longitud, 
                     colonia, entre_calles, descripcion, nombre, 
-                    email, telefono, departamento_id, ip_origen, user_agent
-                ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+                    email, telefono, departamento_id, ip_origen
+                ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
                 RETURNING *`,
                 [
                     folio, tipo, direccion, latitud || null, longitud || null,
                     colonia || null, entre_calles || null, descripcion,
                     nombre || null, email || null, telefono || null,
-                    departamento_id,
-                    req.ip || req.connection.remoteAddress,
-                    req.headers['user-agent']
+                    departamento_id, req.ip || req.connection.remoteAddress
                 ]
             );
 
@@ -81,8 +66,7 @@ const reporteController = {
             res.status(201).json({
                 success: true,
                 message: 'Reporte guardado exitosamente',
-                folio: folio,
-                reporte: result.rows[0]
+                folio: folio
             });
 
         } catch (error) {
@@ -94,14 +78,13 @@ const reporteController = {
         }
     },
 
-    // Consultar reporte por folio
-    async consultarReporte(req, res) {
+    // ===== 2. CONSULTAR REPORTE POR FOLIO (API) =====
+    consultarReporte: async (req, res) => {
         try {
             const { folio } = req.params;
             
             const result = await pool.query(
-                `SELECT r.*, d.nombre as departamento,
-                        (SELECT json_agg(s) FROM seguimiento_reportes s WHERE s.reporte_id = r.id) as seguimiento
+                `SELECT r.*, d.nombre as departamento
                  FROM reportes r
                  LEFT JOIN departamentos d ON d.id = r.departamento_id
                  WHERE r.folio = $1`,
@@ -129,8 +112,8 @@ const reporteController = {
         }
     },
 
-    // Actualizar estado de reporte (para empleados)
-    async actualizarEstado(req, res) {
+    // ===== 3. ACTUALIZAR ESTADO (API) =====
+    actualizarEstado: async (req, res) => {
         try {
             const { folio } = req.params;
             const { estado, comentario } = req.body;
@@ -143,10 +126,10 @@ const reporteController = {
                 });
             }
 
-            // Actualizar reporte
             const result = await pool.query(
                 `UPDATE reportes 
-                 SET estado = $1, fecha_atencion = CASE WHEN $1 = 'resuelto' THEN CURRENT_TIMESTAMP ELSE fecha_atencion END
+                 SET estado = $1, 
+                     fecha_atencion = CASE WHEN $1 = 'resuelto' THEN CURRENT_TIMESTAMP ELSE fecha_atencion END
                  WHERE folio = $2
                  RETURNING *`,
                 [estado, folio]
@@ -159,7 +142,7 @@ const reporteController = {
                 });
             }
 
-            // Crear seguimiento
+            // Registrar seguimiento
             await pool.query(
                 `INSERT INTO seguimiento_reportes (reporte_id, estado_anterior, estado_nuevo, comentario, accion)
                  VALUES ($1, $2, $3, $4, $5)`,
@@ -178,6 +161,50 @@ const reporteController = {
                 success: false,
                 message: 'Error al actualizar estado'
             });
+        }
+    },
+
+    // ===== 4. LISTAR TODOS (API) =====
+    listarTodos: async (req, res) => {
+        try {
+            const result = await pool.query(`
+                SELECT r.*, d.nombre as departamento 
+                FROM reportes r
+                LEFT JOIN departamentos d ON d.id = r.departamento_id
+                ORDER BY r.fecha_reporte DESC
+            `);
+            
+            res.json({
+                success: true,
+                reportes: result.rows
+            });
+        } catch (error) {
+            console.error('❌ Error al listar reportes:', error);
+            res.status(500).json({
+                success: false,
+                message: 'Error al obtener reportes'
+            });
+        }
+    },
+
+    // ===== 5. VER TODOS (VISTA HTML) =====
+    verTodos: async (req, res) => {
+        try {
+            const result = await pool.query(`
+                SELECT r.*, d.nombre as departamento 
+                FROM reportes r
+                LEFT JOIN departamentos d ON d.id = r.departamento_id
+                ORDER BY r.fecha_reporte DESC
+            `);
+            
+            res.render('admin/reportes', {
+                titulo: 'Reportes Ciudadanos',
+                reportes: result.rows,
+                currentPage: 'admin'
+            });
+        } catch (error) {
+            console.error('❌ Error:', error);
+            res.status(500).send('Error al cargar reportes');
         }
     }
 };
