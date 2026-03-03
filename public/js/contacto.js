@@ -237,33 +237,79 @@ document.addEventListener('DOMContentLoaded', function() {
     // 🟢 AHORA SÍ, inicializar fotos DENTRO del DOMContentLoaded
     initFotos();
     
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log('📤 Formulario enviado');
+    form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    console.log('📤 Formulario enviado - Guardando en BD');
+    
+    // Validar campos
+    const tipo = document.getElementById('tipoReporte').value;
+    const direccion = document.getElementById('direccion').value;
+    const descripcion = document.querySelector('textarea[name="descripcion"]').value;
+    const privacidad = document.querySelector('input[name="privacidad"]').checked;
+    
+    if (!tipo || !direccion || !descripcion || !privacidad) {
+        alert('Completa todos los campos obligatorios');
+        return;
+    }
+    
+    // Mostrar loading
+    const btn = e.target.querySelector('.btn-enviar');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span>Guardando...</span> <i class="fas fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+    
+    try {
+        // Preparar datos para enviar
+        const formData = {
+            tipo: tipo,
+            direccion: direccion,
+            latitud: document.getElementById('latitud').value,
+            longitud: document.getElementById('longitud').value,
+            colonia: document.querySelector('input[name="colonia"]').value,
+            entre_calles: document.querySelector('input[name="entre_calles"]').value,
+            descripcion: descripcion,
+            nombre: document.querySelector('input[name="nombre"]').value,
+            email: document.querySelector('input[name="email"]').value,
+            telefono: document.querySelector('input[name="telefono"]').value
+        };
         
-        // Validar campos
-        const tipo = document.getElementById('tipoReporte').value;
-        const direccion = document.getElementById('direccion').value;
-        const descripcion = document.querySelector('textarea[name="descripcion"]').value;
-        const privacidad = document.querySelector('input[name="privacidad"]').checked;
+        console.log('📦 Enviando a BD:', formData);
         
-        if (!tipo || !direccion || !descripcion || !privacidad) {
-            alert('Completa todos los campos obligatorios');
-            return;
+        // 🟢 ENVIAR A LA API REAL
+        const response = await fetch('/api/reportes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        console.log('📨 Respuesta del servidor:', data);
+        
+        if (data.success) {
+            // Generar folio (el que viene del servidor)
+            document.getElementById('folioGenerado').textContent = data.folio;
+            
+            // MOSTRAR POPUP
+            popup.style.display = 'flex';
+            
+            // ⏰ Auto-cerrar después de 3 segundos
+            setTimeout(() => {
+                cerrarPopupYResetear();
+            }, 3000);
+        } else {
+            alert('Error: ' + data.message);
         }
         
-        // Generar folio
-        const folio = 'REP-' + Date.now().toString().slice(-8);
-        document.getElementById('folioGenerado').textContent = folio;
-        
-        // MOSTRAR POPUP
-        popup.style.display = 'flex';
-        
-        // ⏰ Auto-cerrar después de 3 segundos
-        setTimeout(() => {
-            cerrarPopupYResetear();
-        }, 3000);
-    });
+    } catch (error) {
+        console.error('❌ Error al enviar:', error);
+        alert('Error de conexión. Intenta más tarde.');
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+});
 });
 
 // Función para cerrar popup y resetear formulario
