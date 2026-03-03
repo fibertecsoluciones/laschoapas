@@ -72,3 +72,21 @@
 .contacto-item:hover i {
     color: var(--white);
 }
+
+
+
+/* Mapa preview */
+.contacto-page .mapa-preview {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ecf0f1;
+    background: #f8f9fa;
+    padding: 0.5rem;
+}
+
+.contacto-page .mapa-preview iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 250px;
+}
